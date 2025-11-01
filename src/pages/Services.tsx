@@ -1,4 +1,4 @@
-import { Droplets, Shield, Wrench, CheckCircle } from 'lucide-react';
+import { Droplets, Shield, Wrench, CheckCircle, Zap, Layers } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Services() {
@@ -54,6 +54,84 @@ export default function Services() {
         'Final protective coating'
       ],
       image: 'https://images.pexels.com/photos/6283958/pexels-photo-6283958.jpeg'
+    },
+    {
+      title: 'PU Grouting',
+      icon: Zap,
+      description: 'Polyurethane grouting for sealing cracks, cavities, and gaps in concrete structures with high precision.',
+      features: [
+        'Crack and cavity filling',
+        'Concrete strengthening',
+        'Expansion joint sealing',
+        'Basement waterproofing',
+        'Injected foam expansion'
+      ],
+      image: 'https://images.pexels.com/photos/3584664/pexels-photo-3584664.jpeg'
+    },
+    {
+      title: 'PU Coating',
+      icon: Layers,
+      description: 'High-performance polyurethane coating for superior waterproofing protection and durability.',
+      features: [
+        'Elastomeric coating application',
+        'UV resistance treatment',
+        'Temperature-resistant finish',
+        'Seamless protection layer',
+        'Chemical resistance'
+      ],
+      image: 'https://images.pexels.com/photos/2529365/pexels-photo-2529365.jpeg'
+    },
+    {
+      title: 'Membrane Work',
+      icon: Shield,
+      description: 'Modern membrane waterproofing technology for maximum protection against water intrusion.',
+      features: [
+        'Flexible membrane installation',
+        'Torch-applied membranes',
+        'Self-adhesive membranes',
+        'Joint and overlap sealing',
+        'Long-term durability'
+      ],
+      image: 'https://images.pexels.com/photos/5974056/pexels-photo-5974056.jpeg'
+    },
+    {
+      title: 'Box Type Waterproofing',
+      icon: Droplets,
+      description: 'Complete waterproofing enclosure for basements, underground structures, and water storage boxes.',
+      features: [
+        'Foundation waterproofing',
+        'Underground structure protection',
+        'Box casting sealing',
+        'Internal and external coating',
+        'Multi-layer protection'
+      ],
+      image: 'https://images.pexels.com/photos/2471235/pexels-photo-2471235.jpeg'
+    },
+    {
+      title: 'Side Wall Waterproofing',
+      icon: Shield,
+      description: 'Specialized waterproofing for exterior and interior side walls to prevent moisture and seepage.',
+      features: [
+        'Exterior wall protection',
+        'Interior dampness prevention',
+        'Breathable coating application',
+        'Crack monitoring and repair',
+        'Long-lasting protection'
+      ],
+      image: 'https://images.pexels.com/photos/5974064/pexels-photo-5974064.jpeg'
+    },
+    {
+      title: 'Bitumen Work',
+      icon: Wrench,
+      description: 'Traditional bitumen-based waterproofing solutions for cost-effective protection and sealing.',
+      features: [
+        'Bitumen coating application',
+        'Asphalt waterproofing',
+        'Crack sealing with bitumen',
+        'Surface preparation and priming',
+        'Budget-friendly solutions'
+      ],
+      image: 'https://images.pexels.com/photos/3962631/pexels-photo-3962631.jpeg'
     }
   ];
 

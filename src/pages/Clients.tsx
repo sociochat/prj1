@@ -8,84 +8,104 @@ export default function Clients() {
       slug: 'ekta-world',
       experience: '22 Years',
       projects: '18,45,000 sq.ft',
-      image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg'
+      image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg',
+      logo: 'https://images.pexels.com/photos/5174868/pexels-photo-5174868.jpeg'
     },
     {
       name: 'Prakash Group',
       slug: 'prakash-group',
       experience: '23 Years',
       projects: '90,75,00 sq.ft',
-      image: 'https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg'
+      image: 'https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg',
+      logo: 'https://images.pexels.com/photos/5174869/pexels-photo-5174869.jpeg'
     },
     {
       name: 'Dimple Realtors',
       slug: 'dimple-realtors',
       experience: '16 Years',
       projects: '15,85,000 sq.ft',
-      image: 'https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg'
+      image: 'https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg',
+      logo: 'https://images.pexels.com/photos/5174870/pexels-photo-5174870.jpeg'
     },
     {
       name: 'D.V. Realtors',
       slug: 'dv-realtors',
       experience: '7 Years',
       projects: '5,50,000 sq.ft',
-      image: 'https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg'
+      image: 'https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg',
+      logo: 'https://images.pexels.com/photos/5174871/pexels-photo-5174871.jpeg'
     },
     {
       name: 'S.J. Corporation',
       slug: 'sj-corporation',
       experience: '4 Years',
       projects: '60,000 sq.ft',
-      image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg'
+      image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg',
+      logo: 'https://images.pexels.com/photos/5174872/pexels-photo-5174872.jpeg'
     },
     {
       name: 'Rachna Group',
       slug: 'rachna-group',
       experience: '12 Years',
       projects: '1,95,000 sq.ft',
-      image: 'https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg'
+      image: 'https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg',
+      logo: 'https://images.pexels.com/photos/5174873/pexels-photo-5174873.jpeg'
     },
     {
       name: 'Yamuna Reality',
       slug: 'yamuna-reality',
       experience: '7 Years',
       projects: '5,43,000 sq.ft',
-      image: 'https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg'
+      image: 'https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg',
+      logo: 'https://images.pexels.com/photos/5174874/pexels-photo-5174874.jpeg'
     },
     {
       name: 'Land Developers',
       slug: 'land-developers',
       experience: '20 Years',
       projects: 'Multiple Projects',
-      image: 'https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg'
+      image: 'https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg',
+      logo: 'https://images.pexels.com/photos/5174875/pexels-photo-5174875.jpeg'
     },
     {
       name: 'Empire Realtors',
       slug: 'empire-realtors',
       experience: '22 Years',
       projects: '3,55,000 sq.ft',
-      image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg'
+      image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg',
+      logo: 'https://images.pexels.com/photos/5174876/pexels-photo-5174876.jpeg'
     },
     {
       name: 'Sahakar Group',
       slug: 'sahakar-group',
       experience: '15 Years',
       projects: '8,75,000 sq.ft',
-      image: 'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg'
+      image: 'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg',
+      logo: 'https://images.pexels.com/photos/5174877/pexels-photo-5174877.jpeg'
     },
     {
       name: 'Parsh Groups',
       slug: 'parsh-groups',
       experience: '15 Years',
       projects: '4,50,000 sq.ft',
-      image: 'https://images.pexels.com/photos/2157404/pexels-photo-2157404.jpeg'
+      image: 'https://images.pexels.com/photos/2157404/pexels-photo-2157404.jpeg',
+      logo: 'https://images.pexels.com/photos/5174878/pexels-photo-5174878.jpeg'
     },
     {
       name: 'BJ Enterprises',
       slug: 'bj-enterprises',
       experience: '5 Years',
       projects: '1,50,000 sq.ft',
-      image: 'https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg'
+      image: 'https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg',
+      logo: 'https://images.pexels.com/photos/5174879/pexels-photo-5174879.jpeg'
+    },
+    {
+      name: 'Romell Group',
+      slug: 'romell-group',
+      experience: '8 Years',
+      projects: '3,25,000 sq.ft',
+      image: 'https://images.pexels.com/photos/5176023/pexels-photo-5176023.jpeg',
+      logo: 'https://images.pexels.com/photos/5174880/pexels-photo-5174880.jpeg'
     }
   ];
 
@@ -115,26 +135,33 @@ export default function Clients() {
                 to={`/clients/${client.slug}`}
                 className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-40 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center border-b-2 border-cyan-100">
+                  <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className="w-28 h-28 object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="relative h-28 overflow-hidden">
                   <img
                     src={client.image}
                     alt={client.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-2xl font-bold text-white">{client.name}</h3>
+                  <div className="absolute bottom-3 left-4 right-4">
+                    <h3 className="text-lg font-bold text-white">{client.name}</h3>
                   </div>
                 </div>
-                <div className="p-6 bg-gradient-to-br from-white to-cyan-50">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="p-5 bg-gradient-to-br from-white to-cyan-50">
+                  <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center space-x-2 text-cyan-600">
-                      <Building2 className="h-5 w-5" />
-                      <span className="font-semibold">{client.experience}</span>
+                      <Building2 className="h-4 w-4" />
+                      <span className="font-semibold text-xs">{client.experience}</span>
                     </div>
-                    <div className="text-sm text-gray-600">{client.projects}</div>
+                    <div className="text-xs text-gray-600">{client.projects}</div>
                   </div>
-                  <div className="text-cyan-600 font-semibold group-hover:text-cyan-700 transition-colors">
+                  <div className="text-cyan-600 font-semibold group-hover:text-cyan-700 transition-colors text-sm">
                     View Projects →
                   </div>
                 </div>
@@ -157,7 +184,7 @@ export default function Clients() {
                 <p className="text-lg opacity-90">Completed Projects</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <p className="text-4xl font-bold mb-2">12+</p>
+                <p className="text-4xl font-bold mb-2">13+</p>
                 <p className="text-lg opacity-90">Builder Partners</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">

@@ -181,6 +181,17 @@ export default function ClientDetail() {
         { name: 'Vishwa Nagri', location: 'Vasai (E)' }
       ],
       image: 'https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg'
+    },
+    'romell-group': {
+      name: 'Romell Group',
+      experience: '8 Years',
+      totalArea: '3,25,000 sq.ft',
+      description: 'Trusted partner of Romell Group for residential and commercial waterproofing projects in key Mumbai locations including Borivali East and Malad.',
+      projects: [
+        { name: 'Various Projects', location: 'Borivali East', area: '1,75,000 sq.ft' },
+        { name: 'Various Projects', location: 'Malad West', area: '1,50,000 sq.ft' }
+      ],
+      image: 'https://images.pexels.com/photos/5176023/pexels-photo-5176023.jpeg'
     }
   };
 

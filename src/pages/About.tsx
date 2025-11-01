@@ -26,13 +26,13 @@ export default function About() {
                 <span>Established 1991</span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                About <span className="text-cyan-600">Mamta Waterproofing</span>
+                The Story of <span className="text-cyan-600">Mamta Waterproofing</span>
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Since 1991, Mamta Waterproofing has been Mumbai's trusted partner for comprehensive waterproofing solutions. Founded by Mr. Ramchandra Jukanti, we have grown to become one of the most reputed waterproofing companies in the region.
+                Every building tells a story. At Mamta Waterproofing, our story began in 1991 with a simple vision: to protect Mumbai's properties from the ravages of water damage and seepage. What started as a dream has evolved into three decades of unwavering commitment to excellence and innovation.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our commitment to excellence, quality workmanship, and customer satisfaction has earned us the trust of leading builders and developers across Mumbai.
+                Today, we stand as Mumbai's most trusted waterproofing company, having successfully protected over 90,75,000 sq.ft of residential and commercial properties. Our journey is a testament to the dedication of our team and the trust our clients place in us.
               </p>
             </div>
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
@@ -54,6 +54,36 @@ export default function About() {
 
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="container mx-auto">
+          <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-8 sm:p-12 lg:p-16 border border-cyan-200 mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center">The Founder's Vision</h2>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="space-y-6">
+                <h3 className="text-2xl sm:text-3xl font-bold text-cyan-600 mb-4">Mr. Ramchandra Jukanti</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  With over 30 years of specialized expertise in waterproofing, Mr. Ramchandra Jukanti founded Mamta Waterproofing with a mission to solve Mumbai's most persistent problem: water damage and seepage.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Starting from humble beginnings, his passion for quality and innovation transformed Mamta Waterproofing into an industry leader. His hands-on approach and deep technical knowledge have been instrumental in developing cutting-edge waterproofing solutions that address every type of water intrusion challenge.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  "I believe that every building deserves protection," says Mr. Jukanti. "Our mission is not just to fix leaks, but to create lasting peace of mind for property owners across Mumbai."
+                </p>
+                <div className="pt-6 border-t-2 border-cyan-300">
+                  <p className="text-cyan-600 font-bold text-lg">Proprietor & Waterproofing Specialist</p>
+                  <p className="text-gray-600 text-lg">30+ Years of Industry Experience</p>
+                </div>
+              </div>
+              <div className="relative h-72 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src="https://images.pexels.com/photos/2440471/pexels-photo-2440471.jpeg"
+                  alt="Founder at work"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              </div>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-cyan-50 to-white p-8 rounded-2xl shadow-lg border border-cyan-100">
               <div className="w-16 h-16 bg-cyan-600 rounded-xl flex items-center justify-center mb-6">
