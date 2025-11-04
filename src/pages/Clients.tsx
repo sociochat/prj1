@@ -9,7 +9,7 @@ export default function Clients() {
       experience: '22 Years',
       projects: '18,45,000 sq.ft',
       image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg',
-      logo: 'https://images.pexels.com/photos/5174868/pexels-photo-5174868.jpeg'
+      logo: 'https://www.ektaworld.com/images/new-logo-png.png'
     },
     {
       name: 'Prakash Group',
@@ -17,7 +17,7 @@ export default function Clients() {
       experience: '23 Years',
       projects: '90,75,00 sq.ft',
       image: 'https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg',
-      logo: 'https://images.pexels.com/photos/5174869/pexels-photo-5174869.jpeg'
+      logo: 'https://prakashgroup.net/wp-content/uploads/2023/08/prakash-group-logo.png'
     },
     {
       name: 'Dimple Realtors',
@@ -25,7 +25,7 @@ export default function Clients() {
       experience: '16 Years',
       projects: '15,85,000 sq.ft',
       image: 'https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg',
-      logo: 'https://images.pexels.com/photos/5174870/pexels-photo-5174870.jpeg'
+      logo: 'https://dimplesgroup.com/assets/img/logo/logo.webp'
     },
     {
       name: 'D.V. Realtors',
@@ -33,7 +33,7 @@ export default function Clients() {
       experience: '7 Years',
       projects: '5,50,000 sq.ft',
       image: 'https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg',
-      logo: 'https://images.pexels.com/photos/5174871/pexels-photo-5174871.jpeg'
+      logo: 'https://newprojects.99acres.com/projects/d.v._group/builderr.jpg'
     },
     {
       name: 'S.J. Corporation',
@@ -41,7 +41,7 @@ export default function Clients() {
       experience: '4 Years',
       projects: '60,000 sq.ft',
       image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg',
-      logo: 'https://images.pexels.com/photos/5174872/pexels-photo-5174872.jpeg'
+      logo: 'https://sjconstructions.co.in/wp-content/uploads/2023/10/SJ-LOGO.png'
     },
     {
       name: 'Rachna Group',
@@ -49,7 +49,7 @@ export default function Clients() {
       experience: '12 Years',
       projects: '1,95,000 sq.ft',
       image: 'https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg',
-      logo: 'https://images.pexels.com/photos/5174873/pexels-photo-5174873.jpeg'
+      logo: 'https://lh3.googleusercontent.com/p/AF1QipNceeQBBJoo7xkmngOtgtuSfzwZsVEZcMdojAc_=s1360-w1360-h1020-rw'
     },
     {
       name: 'Yamuna Reality',
@@ -57,7 +57,7 @@ export default function Clients() {
       experience: '7 Years',
       projects: '5,43,000 sq.ft',
       image: 'https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg',
-      logo: 'https://images.pexels.com/photos/5174874/pexels-photo-5174874.jpeg'
+      logo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAbFBMVEVHcEzuIyTuJCXuIiPuIiPcN0PdHSawYoMDr/EKsPEAr+8Jru8Aru8Cru85SqAAru8Aru8Dru8Aru81OZYuLpEwJ44uL5IuMJI1L44tMJIwL5E0Lo8vKo8vL5EuMJIuL5IuL5IuL5JQLIAuMJKYupmKAAAAJHRSTlMASSPMnzAXLkAYcyKhVAuvi1q8FnctmE05z/mGIbf/oeLoe63eJBWdAAAArUlEQVR4AZ3LBQKDMBAEwBTXC0WjV/v/G+u4sxCdLOnlZJDZnExrXm3Tmm86rk3m4/lHMQgXMIrnDYIphN8S0mS+eU7TsPe6myCl3lzRT2gUzKEXUZr4BzAD720ZTBnkeRZ4RVlNIeNCgtJ4ySaKEvGaVYi3aqJ4+yPqUdXRWCPeYYASWxSsb0x0EHmvWnDsIpYdVRq/udWIslGoHr+UGdP/XUHqZHUI1Lu6OZ8Xn+4TOoSrN7sAAAAASUVORK5CYII='
     },
     {
       name: 'Land Developers',
@@ -65,7 +65,7 @@ export default function Clients() {
       experience: '20 Years',
       projects: 'Multiple Projects',
       image: 'https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg',
-      logo: 'https://images.pexels.com/photos/5174875/pexels-photo-5174875.jpeg'
+      logo: 'https://landsdeveloper.com/wp-content/uploads/elementor/thumbs/logo-qvcbx45qwyx9hs83pgz6e9vdlrxtymnq7nafg3pt0g.png'
     },
     {
       name: 'Empire Realtors',
@@ -73,7 +73,7 @@ export default function Clients() {
       experience: '22 Years',
       projects: '3,55,000 sq.ft',
       image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg',
-      logo: 'https://images.pexels.com/photos/5174876/pexels-photo-5174876.jpeg'
+      logo: 'https://www.empirerealty.in/img/logonew.png'
     },
     {
       name: 'Sahakar Group',
@@ -81,7 +81,7 @@ export default function Clients() {
       experience: '15 Years',
       projects: '8,75,000 sq.ft',
       image: 'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg',
-      logo: 'https://images.pexels.com/photos/5174877/pexels-photo-5174877.jpeg'
+      logo: 'https://sahakar-group.in/wp-content/uploads/2021/08/Sahakar-Group-Logo-1536x535.png'
     },
     {
       name: 'Parsh Groups',
@@ -89,7 +89,7 @@ export default function Clients() {
       experience: '15 Years',
       projects: '4,50,000 sq.ft',
       image: 'https://images.pexels.com/photos/2157404/pexels-photo-2157404.jpeg',
-      logo: 'https://images.pexels.com/photos/5174878/pexels-photo-5174878.jpeg'
+      logo: 'https://parshgroup.com/wp-content/uploads/2024/09/Logo_Retina_parsh.webp'
     },
     {
       name: 'BJ Enterprises',
@@ -97,7 +97,7 @@ export default function Clients() {
       experience: '5 Years',
       projects: '1,50,000 sq.ft',
       image: 'https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg',
-      logo: 'https://images.pexels.com/photos/5174879/pexels-photo-5174879.jpeg'
+      logo: 'https://3.imimg.com/data3/AS/BJ/MY-3510185/b-j-enterprises-logo-120x120.png'
     },
     {
       name: 'Romell Group',
@@ -105,7 +105,7 @@ export default function Clients() {
       experience: '8 Years',
       projects: '3,25,000 sq.ft',
       image: 'https://images.pexels.com/photos/5176023/pexels-photo-5176023.jpeg',
-      logo: 'https://images.pexels.com/photos/5174880/pexels-photo-5174880.jpeg'
+      logo: 'https://ik.imagekit.io/ootltj6dk/wp-content/uploads/2024/05/Romell-Logo.png'
     }
   ];
 
