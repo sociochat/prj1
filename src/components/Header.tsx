@@ -1,4 +1,4 @@
-import { Droplets, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -13,7 +13,11 @@ export default function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3">
-            <Droplets className="h-7 w-7 sm:h-9 sm:w-9 text-cyan-600" />
+            <img
+              src="/mamtawat-lgoo-removebg-preview copy.png"
+              alt="Mamta Waterproofing Logo"
+              className="h-12 w-12 sm:h-16 sm:w-16 object-contain"
+            />
             <div>
               <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">Mamta Waterproofing</h1>
               <p className="text-xs text-gray-600 hidden sm:block">Since 1991</p>

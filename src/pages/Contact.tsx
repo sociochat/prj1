@@ -1,6 +1,19 @@
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { useEffect } from 'react';
 
 export default function Contact() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://tally.so/widgets/embed.js';
+    script.async = true;
+    script.onload = () => {
+      if (typeof window !== 'undefined' && (window as any).Tally) {
+        (window as any).Tally.loadEmbeds();
+      }
+    };
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div className="pt-16 sm:pt-20">
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-50 via-blue-50 to-white">
@@ -55,77 +68,18 @@ export default function Contact() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-              <form className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Your Name *</label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-600 focus:outline-none transition-colors text-gray-900"
-                      placeholder="Enter your name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
-                    <input
-                      type="tel"
-                      required
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-600 focus:outline-none transition-colors text-gray-900"
-                      placeholder="Enter your phone"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-600 focus:outline-none transition-colors text-gray-900"
-                    placeholder="Enter your email"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Service Required *</label>
-                  <select
-                    required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-600 focus:outline-none transition-colors text-gray-900"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="terrace">Terrace Waterproofing</option>
-                    <option value="bathroom">Bathroom Waterproofing</option>
-                    <option value="watertank">Water Tank Waterproofing</option>
-                    <option value="mosaic">China Mosaic Fixing</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Project Location</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-600 focus:outline-none transition-colors text-gray-900"
-                    placeholder="Enter location"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
-                  <textarea
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-600 focus:outline-none transition-colors text-gray-900"
-                    placeholder="Tell us about your project and any specific requirements"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-cyan-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-cyan-700 transition-all shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
-                >
-                  <span>Send Message</span>
-                  <Send className="h-5 w-5" />
-                </button>
-              </form>
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <iframe
+                data-tally-src="https://tally.so/embed/jaDZda?alignLeft=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy"
+                width="100%"
+                height="552"
+                frameBorder={0}
+                marginHeight={0}
+                marginWidth={0}
+                title="Enquire for services"
+                style={{ display: 'block' }}
+              ></iframe>
             </div>
 
             <div className="space-y-8">
