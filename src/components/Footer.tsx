@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 pt-8 text-center text-sm">
-          <p className="text-gray-400">&copy; {new Date().getFullYear()} Mamta Waterproofing. All rights reserved. | GST: 27ADSPJ9975R1ZE</p>
+          <p className="text-gray-400">&copy; {new Date().getFullYear()} Mamta Waterproofing. All rights reserved. | GST: 27ADFPJ9975R1ZE</p>
         </div>
       </div>
     </footer>
