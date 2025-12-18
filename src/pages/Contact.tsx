@@ -74,9 +74,9 @@ export default function Contact() {
                 loading="lazy"
                 width="100%"
                 height="552"
-                frameBorder={0}
-                marginHeight={0}
-                marginWidth={0}
+                frameBorder="0"
+                marginHeight="0"
+                marginWidth="0"
                 title="Enquire for services"
                 style={{ display: 'block' }}
               ></iframe>
@@ -109,11 +109,11 @@ export default function Contact() {
               <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
                 <div className="h-96">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0234567890!2d72.8550!3d19.0596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAzJzM0LjYiTiA3MsKwNTEnMTguMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.029374100467!2d72.85504!3d19.059684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c90000000001%3A0x123456789!2sGautam%20Samta%20Seva%20Sangh%20Community%20Hall%2C%20Bandra%20East!5e0!3m2!1sen!2sin!4v1700000000"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
-                    allowFullScreen
+                    allowFullScreen={true}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Mamta Waterproofing Location"
