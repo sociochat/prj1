@@ -1,4 +1,3 @@
-import { Droplets } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -7,10 +6,14 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <Droplets className="h-8 w-8 text-cyan-400" />
-              <h3 className="text-xl font-bold text-white">Mamta Waterproofing</h3>
-            </div>
+            <Link to="/" className="flex items-center space-x-3 mb-4 hover:opacity-80 transition-opacity">
+              <img
+                src="/image.png"
+                alt="Mamta Waterproofing Logo"
+                className="h-12 w-12 object-contain"
+              />
+              <h3 className="text-lg font-bold text-white">Mamta Waterproofing</h3>
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed">Your trusted partner for all waterproofing solutions since 1991.</p>
           </div>
           <div>

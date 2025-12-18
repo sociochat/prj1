@@ -12,11 +12,11 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <Link to="/" className="flex items-center space-x-2 sm:space-x-3">
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity">
             <img
-              src="/mamtawat-lgoo-removebg-preview copy.png"
+              src="/image.png"
               alt="Mamta Waterproofing Logo"
-              className="h-12 w-12 sm:h-16 sm:w-16 object-contain"
+              className="h-14 w-14 sm:h-20 sm:w-20 object-contain"
             />
             <div>
               <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">Mamta Waterproofing</h1>
