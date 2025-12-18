@@ -14,7 +14,7 @@ export default function Services() {
         'Drainage system installation',
         'Post-monsoon maintenance'
       ],
-      image: 'https://images.pexels.com/photos/816198/pexels-photo-816198.jpeg'
+      image: 'https://lh4.googleusercontent.com/RZZpIa98EEusLivZmq4Vkm4td-U2yQ3mtUMH2wiPaZvARZc7Wjvl962nK-eSOgst8jvyw8ynJ3e8ev0GlLJYSa8Y4i-xrYZiHwIP5RE8Ktya7PSALzBFtJ94OMZDUv1hn7h9ICau'
     },
     {
       title: 'Bathroom & WC Waterproofing',
@@ -27,7 +27,7 @@ export default function Services() {
         'Anti-fungal coating',
         'Drainage line waterproofing'
       ],
-      image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg'
+      image: 'https://www.baumerk.com/storage/app/media/blog/banyo-su-yalitimi/islak-zemin-su-yalitimi.jpg'
     },
     {
       title: 'Water Tank Waterproofing',
@@ -40,7 +40,7 @@ export default function Services() {
         'Cleaning and sanitization',
         'Regular maintenance'
       ],
-      image: 'https://images.pexels.com/photos/1416530/pexels-photo-1416530.jpeg'
+      image: 'https://dropex.in/wp-content/uploads/2024/08/Potable-Water-Tank-Coatings.jpg'
     },
     {
       title: 'China Mosaic Fixing',
@@ -53,7 +53,7 @@ export default function Services() {
         'Joint sealing and grouting',
         'Final protective coating'
       ],
-      image: 'https://images.pexels.com/photos/6283958/pexels-photo-6283958.jpeg'
+      image: 'https://i.ytimg.com/vi/rmQ9ethSLuc/maxresdefault.jpg'
     },
     {
       title: 'PU Grouting',
@@ -66,7 +66,7 @@ export default function Services() {
         'Basement waterproofing',
         'Injected foam expansion'
       ],
-      image: 'https://images.pexels.com/photos/3584664/pexels-photo-3584664.jpeg'
+      image: 'https://www.fcsc.co.in/_next/image?url=%2FFCSC%20PRODUCT%20WEBP%2Fepgroutpu2k.webp&w=828&q=75'
     },
     {
       title: 'PU Coating',
@@ -79,7 +79,7 @@ export default function Services() {
         'Seamless protection layer',
         'Chemical resistance'
       ],
-      image: 'https://images.pexels.com/photos/2529365/pexels-photo-2529365.jpeg'
+      image: 'https://images.jdmagicbox.com/quickquotes/images_main/-1wpa31ia.jpg'
     },
     {
       title: 'Membrane Work',
@@ -92,7 +92,7 @@ export default function Services() {
         'Joint and overlap sealing',
         'Long-term durability'
       ],
-      image: 'https://images.pexels.com/photos/5974056/pexels-photo-5974056.jpeg'
+      image: 'https://www.westernadvocate.com.au/images/transform/v1/crop/frm/JbL8dJ5dh2XzNFST9PPkaJ/ac7f42e0-58c3-4295-bb6f-1ab68c48bc5e.jpg/r0_2_1100_733_w1200_h678_fmax.jpg'
     },
     {
       title: 'Box Type Waterproofing',
@@ -105,7 +105,7 @@ export default function Services() {
         'Internal and external coating',
         'Multi-layer protection'
       ],
-      image: 'https://images.pexels.com/photos/2471235/pexels-photo-2471235.jpeg'
+      image: 'https://i.ytimg.com/vi/PipsxcFWwvc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBolFq5DUWpNREf3zeCtVAN5yTDmQ'
     },
     {
       title: 'Side Wall Waterproofing',
@@ -118,7 +118,7 @@ export default function Services() {
         'Crack monitoring and repair',
         'Long-lasting protection'
       ],
-      image: 'https://images.pexels.com/photos/5974064/pexels-photo-5974064.jpeg'
+      image: 'https://5.imimg.com/data5/SELLER/Default/2025/4/506594942/GY/ZL/LQ/244844032/image-2025-04-28t170839-038-500x500.png'
     },
     {
       title: 'Bitumen Work',
@@ -131,7 +131,7 @@ export default function Services() {
         'Surface preparation and priming',
         'Budget-friendly solutions'
       ],
-      image: 'https://images.pexels.com/photos/3962631/pexels-photo-3962631.jpeg'
+      image: 'https://123oil.co.uk/wp-content/uploads/2025/10/bitumen-work.jpg'
     }
   ];
 
@@ -172,13 +172,13 @@ export default function Services() {
                   </Link>
                 </div>
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl group">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/30 transition-colors duration-300"></div>
                   </div>
                 </div>
               </div>

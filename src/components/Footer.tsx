@@ -23,12 +23,14 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h4 className="text-white font-bold mb-4">Services</h4>
+            <h4 className="text-white font-bold mb-4">Our Services</h4>
             <div className="space-y-2 text-sm">
-              <p className="text-gray-400">Terrace Waterproofing</p>
-              <p className="text-gray-400">Bathroom Waterproofing</p>
-              <p className="text-gray-400">Water Tank Solutions</p>
-              <p className="text-gray-400">China Mosaic Fixing</p>
+              <Link to="/services" className="block text-gray-400 hover:text-cyan-400 transition-colors">Terrace Waterproofing</Link>
+              <Link to="/services" className="block text-gray-400 hover:text-cyan-400 transition-colors">Bathroom & WC Waterproofing</Link>
+              <Link to="/services" className="block text-gray-400 hover:text-cyan-400 transition-colors">Water Tank Waterproofing</Link>
+              <Link to="/services" className="block text-gray-400 hover:text-cyan-400 transition-colors">China Mosaic Fixing</Link>
+              <Link to="/services" className="block text-gray-400 hover:text-cyan-400 transition-colors">PU Grouting</Link>
+              <Link to="/services" className="block text-gray-400 hover:text-cyan-400 transition-colors">PU Coating</Link>
             </div>
           </div>
           <div>
