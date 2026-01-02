@@ -71,28 +71,28 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative h-auto md:h-96 lg:h-[500px]">
-              <div className="hidden md:block absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-3xl transform rotate-3 shadow-2xl"></div>
-              <div className="absolute md:absolute inset-0 bg-white rounded-3xl shadow-xl p-4 sm:p-6 md:p-8 flex flex-col justify-center space-y-3 sm:space-y-4">
-                <div className="flex items-start space-x-3 bg-cyan-50 p-3 sm:p-4 rounded-xl">
-                  <Shield className="h-6 sm:h-8 w-6 sm:w-8 text-cyan-600 flex-shrink-0 mt-1" />
-                  <div className="min-w-0">
-                    <h3 className="font-bold text-gray-900 text-base sm:text-lg">Quality Assured</h3>
-                    <p className="text-xs sm:text-sm text-gray-600 mt-1">Premium materials and expert workmanship</p>
+            <div className="hidden md:block relative h-96 lg:h-[500px]">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-3xl transform rotate-3 shadow-2xl"></div>
+              <div className="absolute inset-0 bg-white rounded-3xl shadow-xl p-6 md:p-8 flex flex-col justify-center space-y-4">
+                <div className="flex items-start space-x-4 bg-cyan-50 p-4 rounded-xl">
+                  <Shield className="h-8 w-8 text-cyan-600 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-lg">Quality Assured</h3>
+                    <p className="text-sm text-gray-600 mt-1">Premium materials and expert workmanship</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3 bg-blue-50 p-3 sm:p-4 rounded-xl">
-                  <CheckCircle className="h-6 sm:h-8 w-6 sm:w-8 text-blue-600 flex-shrink-0 mt-1" />
-                  <div className="min-w-0">
-                    <h3 className="font-bold text-gray-900 text-base sm:text-lg">Timely Delivery</h3>
-                    <p className="text-xs sm:text-sm text-gray-600 mt-1">Projects completed on schedule</p>
+                <div className="flex items-start space-x-4 bg-blue-50 p-4 rounded-xl">
+                  <CheckCircle className="h-8 w-8 text-blue-600 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-lg">Timely Delivery</h3>
+                    <p className="text-sm text-gray-600 mt-1">Projects completed on schedule</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3 bg-teal-50 p-3 sm:p-4 rounded-xl">
-                  <Award className="h-6 sm:h-8 w-6 sm:w-8 text-teal-600 flex-shrink-0 mt-1" />
-                  <div className="min-w-0">
-                    <h3 className="font-bold text-gray-900 text-base sm:text-lg">Trusted by Leaders</h3>
-                    <p className="text-xs sm:text-sm text-gray-600 mt-1">Working with top builders since 1995</p>
+                <div className="flex items-start space-x-4 bg-teal-50 p-4 rounded-xl">
+                  <Award className="h-8 w-8 text-teal-600 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-gray-900 text-lg">Trusted by Leaders</h3>
+                    <p className="text-sm text-gray-600 mt-1">Working with top builders since 1995</p>
                   </div>
                 </div>
               </div>
