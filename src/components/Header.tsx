@@ -20,7 +20,7 @@ export default function Header() {
             />
             <div>
               <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">Mamta Waterproofing</h1>
-              <p className="text-xs text-gray-600 hidden sm:block">Since 1991</p>
+              <p className="text-xs text-gray-600 hidden sm:block">Since 1991 | Specializing in Terrace, Bathroom, Basement & Sunken Areas Waterproofing Across Mumbai</p>
             </div>
           </Link>
 
