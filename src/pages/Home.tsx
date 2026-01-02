@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-50 via-blue-50 to-white">
+      <section className="pt-24 sm:pt-32 pb-20 sm:pb-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-cyan-50 via-blue-50 to-white">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-6 sm:space-y-8">
