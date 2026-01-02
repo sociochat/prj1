@@ -206,19 +206,19 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900 text-sm sm:text-base">Lift Machines</p>
-                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">4</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">8</p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900 text-sm sm:text-base">Cutter Machines</p>
-                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">2</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">10</p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900 text-sm sm:text-base">Breaker Machines</p>
-                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">6</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">12</p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900 text-sm sm:text-base">Grouting Pumps</p>
-                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">4</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">7</p>
                   </div>
                 </div>
               </div>

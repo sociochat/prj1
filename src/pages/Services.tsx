@@ -230,19 +230,19 @@ export default function Services() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900">Lift Machines</p>
-                    <p className="text-cyan-600 text-2xl font-bold mt-1">4</p>
+                    <p className="text-cyan-600 text-2xl font-bold mt-1">8</p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900">Cutter Machines</p>
-                    <p className="text-cyan-600 text-2xl font-bold mt-1">2</p>
+                    <p className="text-cyan-600 text-2xl font-bold mt-1">10</p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900">Breaker Machines</p>
-                    <p className="text-cyan-600 text-2xl font-bold mt-1">6</p>
+                    <p className="text-cyan-600 text-2xl font-bold mt-1">12</p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900">Grouting Pumps</p>
-                    <p className="text-cyan-600 text-2xl font-bold mt-1">4</p>
+                    <p className="text-cyan-600 text-2xl font-bold mt-1">7</p>
                   </div>
                 </div>
               </div>

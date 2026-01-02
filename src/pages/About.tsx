@@ -188,7 +188,7 @@ export default function About() {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
                     <div className="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center">
-                      <p className="text-2xl font-bold text-cyan-600">4</p>
+                      <p className="text-2xl font-bold text-cyan-600">8</p>
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Lift Machines</p>
@@ -197,7 +197,7 @@ export default function About() {
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <p className="text-2xl font-bold text-blue-600">6</p>
+                      <p className="text-2xl font-bold text-blue-600">12</p>
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Breaker Machines</p>
@@ -206,7 +206,7 @@ export default function About() {
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center">
-                      <p className="text-2xl font-bold text-teal-600">4</p>
+                      <p className="text-2xl font-bold text-teal-600">7</p>
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Grouting Pumps</p>
@@ -215,7 +215,7 @@ export default function About() {
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center">
-                      <p className="text-2xl font-bold text-orange-600">2</p>
+                      <p className="text-2xl font-bold text-orange-600">10</p>
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Cutter Machines</p>
