@@ -1,5 +1,16 @@
 import { Building2, Award, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useCountAnimation } from '../hooks/useCountAnimation';
+
+function StatCard({ value, label }: { value: number; label: string }) {
+  const { count, elementRef } = useCountAnimation(value);
+  return (
+    <div ref={elementRef} className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+      <p className="text-4xl font-bold mb-2">{count}+</p>
+      <p className="text-lg opacity-90">{label}</p>
+    </div>
+  );
+}
 
 export default function Clients() {
   const clients = [
@@ -179,18 +190,9 @@ export default function Clients() {
               Successfully delivered waterproofing projects across residential and commercial properties in Mumbai, Navi Mumbai, Thane, and surrounding areas.
             </p>
             <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <p className="text-4xl font-bold mb-2">50+</p>
-                <p className="text-lg opacity-90">Completed Projects</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <p className="text-4xl font-bold mb-2">13+</p>
-                <p className="text-lg opacity-90">Builder Partners</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                <p className="text-4xl font-bold mb-2">30+</p>
-                <p className="text-lg opacity-90">Years Experience</p>
-              </div>
+              <StatCard value={50} label="Completed Projects" />
+              <StatCard value={13} label="Builder Partners" />
+              <StatCard value={30} label="Years Experience" />
             </div>
           </div>
         </div>

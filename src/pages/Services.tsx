@@ -1,5 +1,16 @@
 import { Droplets, Shield, Wrench, CheckCircle, Zap, Layers } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useCountAnimation } from '../hooks/useCountAnimation';
+
+function EquipmentCard({ value, label }: { value: number; label: string }) {
+  const { count, elementRef } = useCountAnimation(value);
+  return (
+    <div ref={elementRef} className="bg-white p-4 rounded-lg shadow">
+      <p className="font-semibold text-gray-900">{label}</p>
+      <p className="text-cyan-600 text-2xl font-bold mt-1">{count}</p>
+    </div>
+  );
+}
 
 export default function Services() {
   const services = [
@@ -228,22 +239,10 @@ export default function Services() {
               <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Equipment & Tools</h3>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white p-4 rounded-lg shadow">
-                    <p className="font-semibold text-gray-900">Lift Machines</p>
-                    <p className="text-cyan-600 text-2xl font-bold mt-1">8</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg shadow">
-                    <p className="font-semibold text-gray-900">Cutter Machines</p>
-                    <p className="text-cyan-600 text-2xl font-bold mt-1">10</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg shadow">
-                    <p className="font-semibold text-gray-900">Breaker Machines</p>
-                    <p className="text-cyan-600 text-2xl font-bold mt-1">12</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg shadow">
-                    <p className="font-semibold text-gray-900">Grouting Pumps</p>
-                    <p className="text-cyan-600 text-2xl font-bold mt-1">7</p>
-                  </div>
+                  <EquipmentCard value={8} label="Lift Machines" />
+                  <EquipmentCard value={10} label="Cutter Machines" />
+                  <EquipmentCard value={12} label="Breaker Machines" />
+                  <EquipmentCard value={7} label="Grouting Pumps" />
                 </div>
               </div>
             </div>
