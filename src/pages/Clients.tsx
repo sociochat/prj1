@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Building2, Award, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCountAnimation } from '../hooks/useCountAnimation';
-import { supabase, type Client } from '../lib/supabase';
+import { supabase, isSupabaseConfigured, type Client } from '../lib/supabase';
 
 function StatCard({ value, label }: { value: number; label: string }) {
   const { count, elementRef } = useCountAnimation(value);
@@ -23,6 +23,12 @@ export default function Clients() {
   }, []);
 
   const fetchClients = async () => {
+    if (!isSupabaseConfigured) {
+      setClients([]);
+      setLoading(false);
+      return;
+    }
+
     const { data, error } = await supabase
       .from('clients')
       .select('*')
@@ -59,6 +65,12 @@ export default function Clients() {
             <div className="text-center py-12">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-600 mx-auto"></div>
               <p className="mt-4 text-gray-600">Loading clients...</p>
+            </div>
+          ) : clients.length === 0 ? (
+            <div className="text-center py-12">
+              <Building2 className="h-16 w-16 text-gray-300 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Client Portfolio Coming Soon</h3>
+              <p className="text-gray-600">We're working on showcasing our prestigious clients. Check back soon!</p>
             </div>
           ) : (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">

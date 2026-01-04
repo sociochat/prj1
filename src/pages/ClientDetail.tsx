@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Building2, Calendar, CheckCircle, ArrowLeft, MapPin } from 'lucide-react';
-import { supabase, type Client, type Project } from '../lib/supabase';
+import { supabase, isSupabaseConfigured, type Client, type Project } from '../lib/supabase';
 
 export default function ClientDetail() {
   const { slug } = useParams();
@@ -17,6 +17,13 @@ export default function ClientDetail() {
 
   const fetchClientData = async () => {
     setLoading(true);
+
+    if (!isSupabaseConfigured) {
+      setClient(null);
+      setProjects([]);
+      setLoading(false);
+      return;
+    }
 
     const { data: clientData } = await supabase
       .from('clients')

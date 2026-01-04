@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Droplets, Shield, Wrench, CheckCircle, Zap, Layers, type LucideIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCountAnimation } from '../hooks/useCountAnimation';
-import { supabase, type Service } from '../lib/supabase';
+import { supabase, isSupabaseConfigured, type Service } from '../lib/supabase';
 
 const iconMap: Record<string, LucideIcon> = {
   Droplets,
@@ -31,6 +31,12 @@ export default function Services() {
   }, []);
 
   const fetchServices = async () => {
+    if (!isSupabaseConfigured) {
+      setServices([]);
+      setLoading(false);
+      return;
+    }
+
     const { data, error } = await supabase
       .from('services')
       .select('*')
@@ -63,6 +69,15 @@ export default function Services() {
             <div className="text-center py-12">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-600 mx-auto"></div>
               <p className="mt-4 text-gray-600">Loading services...</p>
+            </div>
+          ) : services.length === 0 ? (
+            <div className="text-center py-12">
+              <Droplets className="h-16 w-16 text-gray-300 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Services Information Coming Soon</h3>
+              <p className="text-gray-600">We're updating our detailed service offerings. Please contact us for immediate inquiries.</p>
+              <Link to="/contact" className="inline-block mt-6 bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-all">
+                Contact Us
+              </Link>
             </div>
           ) : (
             <div className="space-y-16 lg:space-y-24">
