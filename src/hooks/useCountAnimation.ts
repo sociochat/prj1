@@ -12,7 +12,6 @@ export function useCountAnimation(targetValue: number, duration: number = 2000) 
           if (entry.isIntersecting && !hasAnimatedRef.current) {
             hasAnimatedRef.current = true;
 
-            let startValue = 0;
             const startTime = Date.now();
 
             const animate = () => {
