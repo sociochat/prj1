@@ -60,7 +60,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-              <p className="text-sm text-gray-600 mt-1">Manage clients and projects</p>
+              <p className="text-sm text-gray-600 mt-1">Manage clients, projects, and services</p>
             </div>
             <button
               onClick={handleSignOut}
@@ -74,6 +74,30 @@ export default function Dashboard() {
       </header>
 
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mb-8 grid sm:grid-cols-2 gap-4">
+          <Link
+            to="/admin/services"
+            className="p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl border-2 border-cyan-200 hover:border-cyan-300 transition-all hover:shadow-lg"
+          >
+            <div className="flex items-center space-x-3 mb-2">
+              <div className="w-10 h-10 bg-cyan-600 rounded-lg flex items-center justify-center">
+                <Building2 className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900">Manage Services</h3>
+            </div>
+            <p className="text-sm text-gray-600">Add, edit, or remove services displayed on the Services page</p>
+          </Link>
+          <div className="p-6 bg-gradient-to-br from-gray-50 to-slate-50 rounded-xl border-2 border-gray-200">
+            <div className="flex items-center space-x-3 mb-2">
+              <div className="w-10 h-10 bg-gray-600 rounded-lg flex items-center justify-center">
+                <Building2 className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900">Manage Clients</h3>
+            </div>
+            <p className="text-sm text-gray-600">View and manage all clients below</p>
+          </div>
+        </div>
+
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-xl font-bold text-gray-900">Clients</h2>
           <button

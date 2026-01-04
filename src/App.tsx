@@ -12,6 +12,7 @@ import ClientDetail from './pages/ClientDetail';
 import Login from './pages/admin/Login';
 import Dashboard from './pages/admin/Dashboard';
 import ProjectManagement from './pages/admin/ProjectManagement';
+import ServicesManagement from './pages/admin/ServicesManagement';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/admin/login" element={<Login />} />
           <Route path="/admin/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/admin/services" element={<ProtectedRoute><ServicesManagement /></ProtectedRoute>} />
           <Route path="/admin/clients/:clientId/projects" element={<ProtectedRoute><ProjectManagement /></ProtectedRoute>} />
           <Route path="*" element={
             <div className="min-h-screen bg-white">

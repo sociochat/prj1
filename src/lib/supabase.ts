@@ -31,3 +31,15 @@ export interface Project {
   created_at: string;
   updated_at: string;
 }
+
+export interface Service {
+  id: string;
+  title: string;
+  icon_name: string;
+  description: string;
+  features: string[];
+  image_url: string;
+  display_order: number;
+  created_at: string;
+  updated_at: string;
+}
