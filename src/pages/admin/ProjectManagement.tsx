@@ -235,10 +235,9 @@ function ProjectModal({
 
     try {
       const projectData = {
-        name: formData.name,
-        location: formData.location,
-        area: formData.area || null,
+        ...formData,
         client_id: clientId,
+        area: formData.area || null,
       };
 
       if (project) {
