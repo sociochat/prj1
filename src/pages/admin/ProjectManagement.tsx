@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { api, type Client, type Project } from '../../lib/api';
+import { supabase, type Client, type Project } from '../../lib/supabase';
 import { ArrowLeft, Plus, Edit, Trash2, MapPin } from 'lucide-react';
 
 export default function ProjectManagement() {
@@ -21,28 +21,36 @@ export default function ProjectManagement() {
   const fetchClientAndProjects = async () => {
     setLoading(true);
 
-    try {
-      const clientData = await api.clients.getById(clientId!);
-      const projectsData = await api.projects.getAll(clientId);
+    const { data: clientData } = await supabase
+      .from('clients')
+      .select('*')
+      .eq('id', clientId)
+      .maybeSingle();
 
-      setClient(clientData);
-      setProjects(projectsData || []);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
+    const { data: projectsData } = await supabase
+      .from('projects')
+      .select('*')
+      .eq('client_id', clientId)
+      .order('name');
 
+    setClient(clientData);
+    setProjects(projectsData || []);
     setLoading(false);
   };
 
   const handleDeleteProject = async (project: Project) => {
     if (!deletingProject) return;
 
-    try {
-      await api.projects.delete(project.id);
+    const { error } = await supabase
+      .from('projects')
+      .delete()
+      .eq('id', project.id);
+
+    if (error) {
+      alert('Error deleting project: ' + error.message);
+    } else {
       setProjects(projects.filter(p => p.id !== project.id));
       setDeletingProject(null);
-    } catch (error: any) {
-      alert('Error deleting project: ' + error.message);
     }
   };
 
@@ -234,9 +242,18 @@ function ProjectModal({
       };
 
       if (project) {
-        await api.projects.update(project.id, projectData);
+        const { error } = await supabase
+          .from('projects')
+          .update(projectData)
+          .eq('id', project.id);
+
+        if (error) throw error;
       } else {
-        await api.projects.create(projectData);
+        const { error } = await supabase
+          .from('projects')
+          .insert([projectData]);
+
+        if (error) throw error;
       }
 
       onSave();

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Building2, Calendar, CheckCircle, ArrowLeft, MapPin } from 'lucide-react';
-import { api, type Client, type Project } from '../lib/api';
+import { supabase, type Client, type Project } from '../lib/supabase';
 
 export default function ClientDetail() {
   const { slug } = useParams();
@@ -18,16 +18,22 @@ export default function ClientDetail() {
   const fetchClientData = async () => {
     setLoading(true);
 
-    try {
-      const clientData = await api.clients.getBySlug(slug!);
+    const { data: clientData } = await supabase
+      .from('clients')
+      .select('*')
+      .eq('slug', slug)
+      .maybeSingle();
 
-      if (clientData) {
-        setClient(clientData);
-        const projectsData = await api.projects.getAll(clientData.id);
-        setProjects(projectsData || []);
-      }
-    } catch (error) {
-      console.error('Error fetching client data:', error);
+    if (clientData) {
+      setClient(clientData);
+
+      const { data: projectsData } = await supabase
+        .from('projects')
+        .select('*')
+        .eq('client_id', clientData.id)
+        .order('name');
+
+      setProjects(projectsData || []);
     }
 
     setLoading(false);

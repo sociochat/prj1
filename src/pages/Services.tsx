@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Droplets, Shield, Wrench, CheckCircle, Zap, Layers, type LucideIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCountAnimation } from '../hooks/useCountAnimation';
-import { api, type Service } from '../lib/api';
+import { supabase, type Service } from '../lib/supabase';
 
 const iconMap: Record<string, LucideIcon> = {
   Droplets,
@@ -31,11 +31,15 @@ export default function Services() {
   }, []);
 
   const fetchServices = async () => {
-    try {
-      const data = await api.services.getAll();
-      setServices(data || []);
-    } catch (error) {
+    const { data, error } = await supabase
+      .from('services')
+      .select('*')
+      .order('display_order');
+
+    if (error) {
       console.error('Error fetching services:', error);
+    } else {
+      setServices(data || []);
     }
     setLoading(false);
   };
