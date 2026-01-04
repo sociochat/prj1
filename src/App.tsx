@@ -10,7 +10,7 @@ import ClientDetail from './pages/ClientDetail';
 
 function App() {
   return (
-    <Router basename="/prj1">
+    <Router>
       <div className="min-h-screen bg-white">
         <Header />
         <Routes>

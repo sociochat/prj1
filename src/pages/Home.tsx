@@ -1,26 +1,5 @@
 import { Shield, CheckCircle, Award, Droplets, Target, Wrench, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useCountAnimation } from '../hooks/useCountAnimation';
-
-function CounterCard({ target, label }: { target: number; label: string }) {
-  const { count, elementRef } = useCountAnimation(target);
-  return (
-    <div ref={elementRef} className="text-center">
-      <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cyan-600">{count}{target === 100 ? '%' : '+'}</p>
-      <p className="text-sm text-gray-600 mt-1">{label}</p>
-    </div>
-  );
-}
-
-function EquipmentCard({ value, label }: { value: number; label: string }) {
-  const { count, elementRef } = useCountAnimation(value);
-  return (
-    <div ref={elementRef} className="bg-white p-4 rounded-lg shadow">
-      <p className="font-semibold text-gray-900 text-sm sm:text-base">{label}</p>
-      <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">{count}</p>
-    </div>
-  );
-}
 
 export default function Home() {
   const services = [
@@ -78,9 +57,18 @@ export default function Home() {
                 </Link>
               </div>
               <div className="grid grid-cols-3 gap-4 pt-4">
-                <CounterCard target={30} label="Years Experience" />
-                <CounterCard target={50} label="Projects" />
-                <CounterCard target={100} label="Satisfaction" />
+                <div className="text-center">
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cyan-600">30+</p>
+                  <p className="text-sm text-gray-600 mt-1">Years Experience</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cyan-600">50+</p>
+                  <p className="text-sm text-gray-600 mt-1">Projects</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cyan-600">100%</p>
+                  <p className="text-sm text-gray-600 mt-1">Satisfaction</p>
+                </div>
               </div>
             </div>
             <div className="hidden md:block relative h-96 lg:h-[500px]">
@@ -216,10 +204,22 @@ export default function Home() {
               <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-6 sm:p-8">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Equipment & Tools</h3>
                 <div className="grid grid-cols-2 gap-4">
-                  <EquipmentCard value={8} label="Lift Machines" />
-                  <EquipmentCard value={10} label="Cutter Machines" />
-                  <EquipmentCard value={12} label="Breaker Machines" />
-                  <EquipmentCard value={7} label="Grouting Pumps" />
+                  <div className="bg-white p-4 rounded-lg shadow">
+                    <p className="font-semibold text-gray-900 text-sm sm:text-base">Lift Machines</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">8</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg shadow">
+                    <p className="font-semibold text-gray-900 text-sm sm:text-base">Cutter Machines</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">10</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg shadow">
+                    <p className="font-semibold text-gray-900 text-sm sm:text-base">Breaker Machines</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">12</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg shadow">
+                    <p className="font-semibold text-gray-900 text-sm sm:text-base">Grouting Pumps</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">7</p>
+                  </div>
                 </div>
               </div>
             </div>

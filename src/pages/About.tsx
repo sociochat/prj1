@@ -1,21 +1,5 @@
 import { Award, Users, Target, CheckCircle, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useCountAnimation } from '../hooks/useCountAnimation';
-
-function EquipmentItem({ value, label, description }: { value: number; label: string; description: string }) {
-  const { count, elementRef } = useCountAnimation(value);
-  return (
-    <div ref={elementRef} className="flex items-center space-x-4">
-      <div className="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-        <p className="text-2xl font-bold text-cyan-600">{count}</p>
-      </div>
-      <div>
-        <p className="font-semibold text-gray-900">{label}</p>
-        <p className="text-sm text-gray-600">{description}</p>
-      </div>
-    </div>
-  );
-}
 
 export default function About() {
   const team = [
@@ -202,10 +186,42 @@ export default function About() {
                   We invest in the latest equipment and tools to ensure efficient and high-quality waterproofing work.
                 </p>
                 <div className="space-y-4">
-                  <EquipmentItem value={8} label="Lift Machines" description="For high-rise building access" />
-                  <EquipmentItem value={12} label="Breaker Machines" description="For surface preparation" />
-                  <EquipmentItem value={7} label="Grouting Pumps" description="For injection waterproofing" />
-                  <EquipmentItem value={10} label="Cutter Machines" description="For precision cutting work" />
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center">
+                      <p className="text-2xl font-bold text-cyan-600">8</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Lift Machines</p>
+                      <p className="text-sm text-gray-600">For high-rise building access</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <p className="text-2xl font-bold text-blue-600">12</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Breaker Machines</p>
+                      <p className="text-sm text-gray-600">For surface preparation</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center">
+                      <p className="text-2xl font-bold text-teal-600">7</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Grouting Pumps</p>
+                      <p className="text-sm text-gray-600">For injection waterproofing</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center">
+                      <p className="text-2xl font-bold text-orange-600">10</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Cutter Machines</p>
+                      <p className="text-sm text-gray-600">For precision cutting work</p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="relative h-64 lg:h-auto">

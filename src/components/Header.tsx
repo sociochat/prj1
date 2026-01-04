@@ -14,7 +14,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity">
             <img
-              src="/mamtawat-lgoo-removebg-preview copy copy.png"
+              src="/image.png"
               alt="Mamta Waterproofing Logo"
               className="h-14 w-14 sm:h-20 sm:w-20 object-contain"
             />

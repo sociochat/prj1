@@ -1,195 +1,200 @@
 import { useParams, Link } from 'react-router-dom';
 import { Building2, Calendar, CheckCircle, ArrowLeft, MapPin } from 'lucide-react';
 
-const clientsData: Record<string, {
-  name: string;
-  slug: string;
-  logo_url: string;
-  image_url: string;
-  experience: string;
-  total_area: string;
-  description: string;
-  projects: Array<{
-    name: string;
-    location: string;
-    area: string;
-  }>;
-}> = {
-  'ekta-world': {
-    name: 'Ekta World',
-    slug: 'ekta-world',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2006 - 2023',
-    total_area: '12,50,000 sq.ft',
-    description: 'Ekta World is one of Mumbai\'s leading real estate developers. We\'ve been proud partners for over 17 years, delivering premium waterproofing solutions across multiple residential and commercial projects.',
-    projects: [
-      { name: 'Ekta Tripolis', location: 'Goregaon West', area: '2,50,000 sq.ft' },
-      { name: 'Ekta Parksville', location: 'Virar West', area: '3,00,000 sq.ft' },
-      { name: 'Ekta Panorama', location: 'Borivali East', area: '2,00,000 sq.ft' },
-      { name: 'Ekta Meadows', location: 'Borivali West', area: '1,80,000 sq.ft' },
-      { name: 'Ekta Oculus', location: 'Chembur', area: '3,20,000 sq.ft' }
-    ]
-  },
-  'prakash-group': {
-    name: 'Prakash Group',
-    slug: 'prakash-group',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2000 - 2022',
-    total_area: '8,75,000 sq.ft',
-    description: 'Prakash Group has been a trusted partner for over 22 years. We\'ve provided comprehensive waterproofing solutions for their residential projects across Mumbai.',
-    projects: [
-      { name: 'Prakash Heights', location: 'Kandivali East', area: '1,50,000 sq.ft' },
-      { name: 'Prakash Residency', location: 'Malad West', area: '2,25,000 sq.ft' },
-      { name: 'Prakash Tower', location: 'Andheri East', area: '3,00,000 sq.ft' },
-      { name: 'Prakash Gardens', location: 'Goregaon West', area: '2,00,000 sq.ft' }
-    ]
-  },
-  'dimple-realtors': {
-    name: 'Dimple Realtors',
-    slug: 'dimple-realtors',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2005 - 2021',
-    total_area: '6,50,000 sq.ft',
-    description: 'Dimple Realtors specializes in premium residential developments. Our 16-year partnership has delivered exceptional waterproofing quality across their projects.',
-    projects: [
-      { name: 'Dimple Paradise', location: 'Dahisar West', area: '1,80,000 sq.ft' },
-      { name: 'Dimple Heights', location: 'Mira Road', area: '2,20,000 sq.ft' },
-      { name: 'Dimple Plaza', location: 'Borivali West', area: '2,50,000 sq.ft' }
-    ]
-  },
-  'dv-realtors': {
-    name: 'D.V. Realtors',
-    slug: 'dv-realtors',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2008 - 2023',
-    total_area: '5,25,000 sq.ft',
-    description: 'D.V. Realtors has been our valued client for 15 years. We\'ve successfully completed waterproofing for their quality residential projects.',
-    projects: [
-      { name: 'DV Enclave', location: 'Santacruz East', area: '1,75,000 sq.ft' },
-      { name: 'DV Residency', location: 'Khar West', area: '1,50,000 sq.ft' },
-      { name: 'DV Heights', location: 'Bandra West', area: '2,00,000 sq.ft' }
-    ]
-  },
-  'sj-corporation': {
-    name: 'S.J. Corporation',
-    slug: 'sj-corporation',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2010 - 2024',
-    total_area: '4,80,000 sq.ft',
-    description: 'S.J. Corporation focuses on modern residential complexes. Our ongoing 14-year partnership reflects our commitment to quality waterproofing solutions.',
-    projects: [
-      { name: 'SJ Harmony', location: 'Powai', area: '1,60,000 sq.ft' },
-      { name: 'SJ Elite', location: 'Mulund West', area: '1,40,000 sq.ft' },
-      { name: 'SJ Paradise', location: 'Thane West', area: '1,80,000 sq.ft' }
-    ]
-  },
-  'rachna-group': {
-    name: 'Rachna Group',
-    slug: 'rachna-group',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2007 - 2022',
-    total_area: '7,20,000 sq.ft',
-    description: 'Rachna Group is known for their upscale residential projects. We\'ve proudly served them for 15 years with expert waterproofing services.',
-    projects: [
-      { name: 'Rachna Heights', location: 'Juhu', area: '2,40,000 sq.ft' },
-      { name: 'Rachna Elegance', location: 'Vile Parle', area: '2,30,000 sq.ft' },
-      { name: 'Rachna Palace', location: 'Santacruz', area: '2,50,000 sq.ft' }
-    ]
-  },
-  'yamuna-reality': {
-    name: 'Yamuna Reality',
-    slug: 'yamuna-reality',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2009 - 2023',
-    total_area: '9,50,000 sq.ft',
-    description: 'Yamuna Reality develops large-scale residential townships. Our 14-year partnership has delivered comprehensive waterproofing across their major projects.',
-    projects: [
-      { name: 'Yamuna Township Phase 1', location: 'Vasai East', area: '3,50,000 sq.ft' },
-      { name: 'Yamuna Heights', location: 'Virar West', area: '3,00,000 sq.ft' },
-      { name: 'Yamuna Residency', location: 'Nalasopara', area: '3,00,000 sq.ft' }
-    ]
-  },
-  'land-developers': {
-    name: 'Land Developers',
-    slug: 'land-developers',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/2121121/pexels-photo-2121121.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2011 - 2024',
-    total_area: '6,90,000 sq.ft',
-    description: 'Land Developers creates modern living spaces. We\'ve been their waterproofing partner for 13 years, ensuring quality in every project.',
-    projects: [
-      { name: 'Land Paradise', location: 'Kandivali West', area: '2,30,000 sq.ft' },
-      { name: 'Land Heights', location: 'Malad East', area: '2,30,000 sq.ft' },
-      { name: 'Land Residency', location: 'Goregaon East', area: '2,30,000 sq.ft' }
-    ]
-  },
-  'empire-realtors': {
-    name: 'Empire Realtors',
-    slug: 'empire-realtors',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2004 - 2020',
-    total_area: '8,25,000 sq.ft',
-    description: 'Empire Realtors builds premium residential complexes. Our 16-year collaboration has set quality standards in waterproofing.',
-    projects: [
-      { name: 'Empire State', location: 'Andheri West', area: '2,75,000 sq.ft' },
-      { name: 'Empire Tower', location: 'Lokhandwala', area: '2,75,000 sq.ft' },
-      { name: 'Empire Heights', location: 'Versova', area: '2,75,000 sq.ft' }
-    ]
-  },
-  'sahakar-group': {
-    name: 'Sahakar Group',
-    slug: 'sahakar-group',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2003 - 2019',
-    total_area: '10,50,000 sq.ft',
-    description: 'Sahakar Group is a prominent cooperative housing developer. We\'ve served them for 16 years with reliable waterproofing solutions.',
-    projects: [
-      { name: 'Sahakar Nagar Phase 1', location: 'Mira Road', area: '3,50,000 sq.ft' },
-      { name: 'Sahakar Heights', location: 'Bhayandar', area: '3,50,000 sq.ft' },
-      { name: 'Sahakar Complex', location: 'Naigaon', area: '3,50,000 sq.ft' }
-    ]
-  },
-  'parsh-groups': {
-    name: 'Parsh Groups',
-    slug: 'parsh-groups',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/1438834/pexels-photo-1438834.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2012 - 2024',
-    total_area: '5,60,000 sq.ft',
-    description: 'Parsh Groups focuses on affordable housing. Our 12-year partnership delivers quality waterproofing at competitive prices.',
-    projects: [
-      { name: 'Parsh Residency', location: 'Dahisar East', area: '1,85,000 sq.ft' },
-      { name: 'Parsh Heights', location: 'Borivali East', area: '1,90,000 sq.ft' },
-      { name: 'Parsh Complex', location: 'Kandivali East', area: '1,85,000 sq.ft' }
-    ]
-  },
-  'bj-enterprises': {
-    name: 'BJ Enterprises',
-    slug: 'bj-enterprises',
-    logo_url: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
-    image_url: 'https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=compress&cs=tinysrgb&w=800',
-    experience: '2015 - 2024',
-    total_area: '4,95,000 sq.ft',
-    description: 'BJ Enterprises is an emerging developer with a focus on quality construction. We\'ve been their trusted waterproofing partner for 9 years.',
-    projects: [
-      { name: 'BJ Heights', location: 'Malad West', area: '1,65,000 sq.ft' },
-      { name: 'BJ Paradise', location: 'Goregaon West', area: '1,65,000 sq.ft' },
-      { name: 'BJ Residency', location: 'Jogeshwari West', area: '1,65,000 sq.ft' }
-    ]
-  }
-};
-
 export default function ClientDetail() {
   const { slug } = useParams();
+
+  const clientsData: Record<string, any> = {
+    'ekta-world': {
+      name: 'Ekta World',
+      experience: '22 Years',
+      totalArea: '18,45,000 sq.ft',
+      description: 'One of our most valued clients, Ekta World has been a trusted partner since the late 1990s. We have successfully completed numerous waterproofing projects for their prestigious developments.',
+      projects: [
+        { name: 'Ekta Medows', location: 'Borivali (E)', area: '18,45,000 sq.ft' },
+        { name: 'Ekta Terrace', location: 'Mahavir Nagar, Kandivali (W)' },
+        { name: 'Ekta Bhoomi', location: 'Mahavir Nagar, Kandivali (W)' },
+        { name: 'Leela Villa', location: 'Khar (W)' },
+        { name: 'Rock Casal Building', location: 'Kandar Pada, Dahisar (W)' },
+        { name: 'Ekta Wood', location: 'Raheja Estate, Borivali (W)' },
+        { name: 'Ekta Bhoomi Garden Phase III', location: 'Rajand Nagar' },
+        { name: 'Ecstasy I & II', location: '15th Road, Khar (W)' },
+        { name: 'Ekta Impress', location: '14th Road, Khar (W)' },
+        { name: 'Ekta Heights', location: '15th Road, Khar (W)' },
+        { name: 'Global City - Ekta Parksville', location: 'Virar (W)' },
+        { name: 'Ekta Lake Superior', location: 'JVLR-Powai' }
+      ],
+      image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg'
+    },
+    'prakash-group': {
+      name: 'Prakash Group',
+      experience: '23 Years',
+      totalArea: '90,75,00 sq.ft',
+      description: 'Our longest-standing client relationship, spanning over two decades. Prakash Group has trusted us with their most prestigious projects across Mumbai.',
+      projects: [
+        { name: 'Aangan', location: '2nd Road, Juhu, Vile Parle (W)', area: '90,75,00 sq.ft' },
+        { name: 'Pacific Enclave', location: '15th Road, Khar' },
+        { name: 'Red Rose', location: '14 A Road, Khar' },
+        { name: 'Palazzo', location: '15th Road, Santacruz (W)' },
+        { name: 'Palazzo Residency', location: '17th Road, Khar' },
+        { name: 'Legend V', location: 'Kandar Pada, Dahisar (W)' },
+        { name: 'Park Royale', location: 'Off. L.B.S. Marg, Mulund (W)' },
+        { name: 'Nova Rosa', location: 'Holy Cross Road, I.C. Colony, Borivali (W)' },
+        { name: 'Vrunda', location: '2nd Road, JVPD Scheme, Vile Parle (W)' },
+        { name: '92 Platinum Hive', location: 'Borivali West' }
+      ],
+      image: 'https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg'
+    },
+    'dimple-realtors': {
+      name: 'Dimple Realtors',
+      experience: '16 Years',
+      totalArea: '15,85,000 sq.ft',
+      description: 'A strong partnership built on quality and reliability. Dimple Realtors has been working with us since 1995 on various residential projects.',
+      projects: [
+        { name: 'Vridavan, Maduvan & Gokul Buildings', location: 'Deva Nagar Road, Borivali (W)', area: '15,85,000 sq.ft' },
+        { name: 'Galaxi', location: 'Kandar Pada, Dahisar (W)' },
+        { name: 'La Vista and La Beleja', location: 'Kaju Pada, Borivali (E)' },
+        { name: 'Sapphire', location: 'I.C. Colony, Borivali (W)' },
+        { name: 'Kamla Venu', location: 'I.C. Colony, Borivali (W)' },
+        { name: '19 North', location: 'Kandivali West' }
+      ],
+      image: 'https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg'
+    },
+    'dv-realtors': {
+      name: 'D.V. Realtors',
+      experience: '7 Years',
+      totalArea: '5,50,000 sq.ft',
+      description: 'Working with D.V. Realtors across multiple locations including Borivali, Mira Road, and Vasai areas.',
+      projects: [
+        { name: 'Various Projects', location: 'Borivali (E) & (W)', area: '5,50,000 sq.ft' },
+        { name: 'Various Projects', location: 'Mira Road (W)' },
+        { name: 'Various Projects', location: 'Vasai (E)' }
+      ],
+      image: 'https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg'
+    },
+    'sj-corporation': {
+      name: 'S.J. Corporation',
+      experience: '4 Years',
+      totalArea: '60,000 sq.ft',
+      description: 'Successfully delivered waterproofing solutions for S.J. Corporation projects in Vasai and Borivali areas.',
+      projects: [
+        { name: 'Various Projects', location: 'Manpashwar Road, Vasai (E)', area: '60,000 sq.ft' },
+        { name: 'Various Projects', location: 'Borivali' }
+      ],
+      image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg'
+    },
+    'rachna-group': {
+      name: 'Rachna Group',
+      experience: '12 Years',
+      totalArea: '1,95,000 sq.ft',
+      description: 'Long-standing relationship with Rachna Group for projects in Bandra and Grant Road areas.',
+      projects: [
+        { name: 'Various Projects', location: 'Bandra (W)', area: '1,95,000 sq.ft' },
+        { name: 'Various Projects', location: 'Grant Road (E)' }
+      ],
+      image: 'https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg'
+    },
+    'yamuna-reality': {
+      name: 'Yamuna Reality',
+      experience: '7 Years',
+      totalArea: '5,43,000 sq.ft',
+      description: 'Successfully completed waterproofing projects for Yamuna Reality across multiple prime locations in Mumbai.',
+      projects: [
+        { name: 'Various Projects', location: 'Juhu', area: '5,43,000 sq.ft' },
+        { name: 'Various Projects', location: 'Santacruz (E)' },
+        { name: 'Various Projects', location: 'Malad (W)' },
+        { name: 'Various Projects', location: 'Borivali (W)' }
+      ],
+      image: 'https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg'
+    },
+    'land-developers': {
+      name: 'Land Developers',
+      experience: '20 Years',
+      totalArea: 'Multiple Projects',
+      description: 'Two decades of successful partnership with Land Developers on various waterproofing projects.',
+      projects: [
+        { name: 'Multiple Residential Projects', location: 'Mumbai Suburbs' }
+      ],
+      image: 'https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg'
+    },
+    'empire-realtors': {
+      name: 'Empire Realtors',
+      experience: '22 Years',
+      totalArea: '3,55,000 sq.ft',
+      description: 'Long-standing partnership with Empire Realtors, delivering quality waterproofing solutions since 1995.',
+      projects: [
+        { name: 'Empire Meghna', location: 'Borivali (W)' },
+        { name: 'Empire Stella', location: 'Borivali (W)', area: '3,55,000 sq.ft' },
+        { name: 'Empire Vrindavan', location: 'Borivali (E)' },
+        { name: 'Kirti Apartment', location: 'Borivali (E)' },
+        { name: 'Patel Bhuvan', location: 'Borivali (E)' },
+        { name: 'Empire Towers', location: 'Goregaon (E)' },
+        { name: 'Amba Aashish', location: 'Borivali (E)' }
+      ],
+      image: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg'
+    },
+    'sahakar-group': {
+      name: 'Sahakar Group',
+      experience: '15 Years',
+      totalArea: '8,75,000 sq.ft',
+      description: 'Extensive portfolio with Sahakar Group across prime locations in Mumbai suburbs.',
+      projects: [
+        { name: 'Revanta', location: 'Goregaon (W)', area: '8,75,000 sq.ft' },
+        { name: 'Vista - Anand Nagar', location: 'Dahisar (E)' },
+        { name: 'Fressia Ranibello', location: 'Malad (E)' },
+        { name: 'Helicon Heights', location: 'Borivali (W)' },
+        { name: 'Shree Shiv Shakti', location: 'Borivali (W)' },
+        { name: 'Fressia Heights', location: 'Dahisar (E)' },
+        { name: 'Fressia NX', location: 'Dahisar (W)' },
+        { name: 'Fressia I, II, III', location: 'Dahisar (W)' },
+        { name: 'Shree Shashwat', location: 'Dahisar (E) & Mira Road' },
+        { name: 'Shree Krishna Garden', location: 'Mira Road' },
+        { name: 'Dahisar Shivangan', location: 'Dahisar' }
+      ],
+      image: 'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg'
+    },
+    'parsh-groups': {
+      name: 'Parsh Groups',
+      experience: '15 Years',
+      totalArea: '4,50,000 sq.ft',
+      description: 'Trusted partner of Parsh Groups and Relators for premium residential projects across Mumbai.',
+      projects: [
+        { name: 'Aangan', location: '2nd Road, Juhu, Vile Parle (W)', area: '4,50,000 sq.ft' },
+        { name: 'Juhu Harshal Society', location: 'Juhu' },
+        { name: '55 Evana', location: 'Santacruz (E)' },
+        { name: '66 Avenue', location: 'Borivali (E), Cater Road No.1' },
+        { name: 'Parsh Galacia', location: 'Santacruz (E)' },
+        { name: 'Parsh Residency', location: 'Malad (W)' },
+        { name: 'Parsh Galaxy', location: 'Malad (W)' },
+        { name: 'Parsh Elegance', location: 'Andheri (E)' },
+        { name: '66 Palazzio', location: 'Borivali (E), Cater Road No.1' }
+      ],
+      image: 'https://images.pexels.com/photos/2157404/pexels-photo-2157404.jpeg'
+    },
+    'bj-enterprises': {
+      name: 'BJ Enterprises',
+      experience: '5 Years',
+      totalArea: '1,50,000 sq.ft',
+      description: 'Growing partnership with BJ Enterprises on their residential projects in Vasai area.',
+      projects: [
+        { name: 'BJ Moonstone Wing A, B, C', location: 'Vasai', area: '1,50,000 sq.ft' },
+        { name: 'Vishwa Nagri', location: 'Vasai (E)' }
+      ],
+      image: 'https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg'
+    },
+    'romell-group': {
+      name: 'Romell Group',
+      experience: '8 Years',
+      totalArea: '3,25,000 sq.ft',
+      description: 'Trusted partner of Romell Group for residential and commercial waterproofing projects in key Mumbai locations including Borivali East and Malad.',
+      projects: [
+        { name: 'Various Projects', location: 'Borivali East', area: '1,75,000 sq.ft' },
+        { name: 'Various Projects', location: 'Malad West', area: '1,50,000 sq.ft' }
+      ],
+      image: 'https://images.pexels.com/photos/5176023/pexels-photo-5176023.jpeg'
+    }
+  };
+
   const client = slug ? clientsData[slug] : null;
 
   if (!client) {
@@ -229,7 +234,7 @@ export default function ClientDetail() {
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-cyan-100">
                   <Building2 className="h-8 w-8 text-cyan-600 mb-3" />
                   <p className="text-sm text-gray-600 mb-1">Total Area</p>
-                  <p className="text-2xl font-bold text-gray-900">{client.total_area}</p>
+                  <p className="text-2xl font-bold text-gray-900">{client.totalArea}</p>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-blue-100">
                   <CheckCircle className="h-8 w-8 text-blue-600 mb-3" />
@@ -240,7 +245,7 @@ export default function ClientDetail() {
             </div>
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src={client.image_url}
+                src={client.image}
                 alt={client.name}
                 className="w-full h-full object-cover"
               />
@@ -254,7 +259,7 @@ export default function ClientDetail() {
         <div className="container mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-center">Completed Projects</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {client.projects.map((project, index) => (
+            {client.projects.map((project: any, index: number) => (
               <div key={index} className="bg-gradient-to-br from-white to-cyan-50 p-6 rounded-xl shadow-lg border border-cyan-100 hover:shadow-xl transition-all">
                 <div className="flex items-start space-x-3 mb-4">
                   <CheckCircle className="h-6 w-6 text-cyan-600 flex-shrink-0 mt-1" />
