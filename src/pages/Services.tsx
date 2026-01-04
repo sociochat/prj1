@@ -1,16 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Droplets, Shield, Wrench, CheckCircle, Zap, Layers, type LucideIcon } from 'lucide-react';
+import { Droplets, Shield, Wrench, CheckCircle, Zap, Layers } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCountAnimation } from '../hooks/useCountAnimation';
-import { supabase, isSupabaseConfigured, type Service } from '../lib/supabase';
-
-const iconMap: Record<string, LucideIcon> = {
-  Droplets,
-  Shield,
-  Wrench,
-  Zap,
-  Layers,
-};
 
 function EquipmentCard({ value, label }: { value: number; label: string }) {
   const { count, elementRef } = useCountAnimation(value);
@@ -23,32 +13,86 @@ function EquipmentCard({ value, label }: { value: number; label: string }) {
 }
 
 export default function Services() {
-  const [services, setServices] = useState<Service[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchServices();
-  }, []);
-
-  const fetchServices = async () => {
-    if (!isSupabaseConfigured) {
-      setServices([]);
-      setLoading(false);
-      return;
+  const services = [
+    {
+      icon: Droplets,
+      title: 'Terrace Waterproofing',
+      description: 'Comprehensive waterproofing solutions for terraces and rooftops. We protect your property from water damage, seepage, and structural deterioration using advanced materials and proven techniques.',
+      features: [
+        'Complete surface preparation and cleaning',
+        'Application of high-quality waterproofing membrane',
+        'Proper drainage system installation',
+        'UV-resistant coating for long-lasting protection',
+        'Post-service inspection and quality assurance'
+      ],
+      image_url: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800'
+    },
+    {
+      icon: Shield,
+      title: 'Bathroom & WC Waterproofing',
+      description: 'Specialized waterproofing for bathrooms, toilets, and wet areas. We ensure complete moisture protection to prevent leaks, dampness, and damage to adjoining walls and floors.',
+      features: [
+        'Floor and wall waterproofing treatment',
+        'Corner and joint sealing with flexible materials',
+        'Anti-fungal coating application',
+        'Proper slope creation for water drainage',
+        'Testing and leak detection before completion'
+      ],
+      image_url: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800'
+    },
+    {
+      icon: Layers,
+      title: 'Water Tank Waterproofing',
+      description: 'Professional waterproofing services for overhead and underground water tanks. We ensure your water storage remains leak-free and maintains water quality with food-grade waterproofing materials.',
+      features: [
+        'Interior and exterior tank waterproofing',
+        'Crack repair and structural reinforcement',
+        'Food-grade, non-toxic coating materials',
+        'Anti-bacterial treatment for hygiene',
+        'Regular maintenance and inspection services'
+      ],
+      image_url: 'https://images.pexels.com/photos/1438834/pexels-photo-1438834.jpeg?auto=compress&cs=tinysrgb&w=800'
+    },
+    {
+      icon: Wrench,
+      title: 'China Mosaic Fixing',
+      description: 'Expert installation and waterproofing of china mosaic tiles for bathrooms, terraces, and water features. Our skilled craftsmen ensure perfect alignment and complete water resistance.',
+      features: [
+        'Professional mosaic tile installation',
+        'Waterproof adhesive and grouting',
+        'Precision cutting and fitting',
+        'Seamless finish with proper joint treatment',
+        'Long-lasting aesthetic appeal'
+      ],
+      image_url: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800'
+    },
+    {
+      icon: Zap,
+      title: 'PU Grouting',
+      description: 'Advanced polyurethane injection grouting for sealing cracks, joints, and voids in concrete structures. This technique provides immediate water-stopping and prevents further deterioration.',
+      features: [
+        'High-pressure PU injection technology',
+        'Effective for active water leaks',
+        'Expands to fill cracks and voids completely',
+        'Flexible and durable seal',
+        'Minimal disruption during application'
+      ],
+      image_url: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800'
+    },
+    {
+      icon: Shield,
+      title: 'PU Coating',
+      description: 'Premium polyurethane coating for superior waterproofing and protection. Ideal for terraces, balconies, and exposed surfaces requiring high durability and weather resistance.',
+      features: [
+        'Seamless waterproof membrane',
+        'Excellent UV and weather resistance',
+        'Flexible to accommodate structural movement',
+        'Quick application and fast curing',
+        'Long service life with minimal maintenance'
+      ],
+      image_url: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800'
     }
-
-    const { data, error } = await supabase
-      .from('services')
-      .select('*')
-      .order('display_order');
-
-    if (error) {
-      console.error('Error fetching services:', error);
-    } else {
-      setServices(data || []);
-    }
-    setLoading(false);
-  };
+  ];
 
   return (
     <div className="pt-16 sm:pt-20">
@@ -65,59 +109,43 @@ export default function Services() {
 
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="container mx-auto">
-          {loading ? (
-            <div className="text-center py-12">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-600 mx-auto"></div>
-              <p className="mt-4 text-gray-600">Loading services...</p>
-            </div>
-          ) : services.length === 0 ? (
-            <div className="text-center py-12">
-              <Droplets className="h-16 w-16 text-gray-300 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Services Information Coming Soon</h3>
-              <p className="text-gray-600">We're updating our detailed service offerings. Please contact us for immediate inquiries.</p>
-              <Link to="/contact" className="inline-block mt-6 bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-all">
-                Contact Us
-              </Link>
-            </div>
-          ) : (
-            <div className="space-y-16 lg:space-y-24">
-              {services.map((service, index) => {
-                const Icon = iconMap[service.icon_name] || Droplets;
-                return (
-                  <div key={service.id} className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                    <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                      <div className="inline-flex items-center justify-center w-16 h-16 bg-cyan-600 rounded-2xl shadow-lg">
-                        <Icon className="h-8 w-8 text-white" />
-                      </div>
-                      <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">{service.title}</h2>
-                      <p className="text-lg text-gray-600 leading-relaxed">{service.description}</p>
-                      <div className="space-y-3">
-                        {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-start space-x-3">
-                            <CheckCircle className="h-6 w-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                            <p className="text-gray-700">{feature}</p>
-                          </div>
-                        ))}
-                      </div>
-                      <Link to="/contact" className="inline-block bg-cyan-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-cyan-700 transition-all shadow-lg hover:shadow-xl mt-4">
-                        Request Quote
-                      </Link>
+          <div className="space-y-16 lg:space-y-24">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div key={index} className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                  <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-cyan-600 rounded-2xl shadow-lg">
+                      <Icon className="h-8 w-8 text-white" />
                     </div>
-                    <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                      <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl group">
-                        <img
-                          src={service.image_url}
-                          alt={service.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/30 transition-colors duration-300"></div>
-                      </div>
+                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">{service.title}</h2>
+                    <p className="text-lg text-gray-600 leading-relaxed">{service.description}</p>
+                    <div className="space-y-3">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start space-x-3">
+                          <CheckCircle className="h-6 w-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                          <p className="text-gray-700">{feature}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <Link to="/contact" className="inline-block bg-cyan-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-cyan-700 transition-all shadow-lg hover:shadow-xl mt-4">
+                      Request Quote
+                    </Link>
+                  </div>
+                  <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                    <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl group">
+                      <img
+                        src={service.image_url}
+                        alt={service.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/30 transition-colors duration-300"></div>
                     </div>
                   </div>
-                );
-              })}
-            </div>
-          )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
