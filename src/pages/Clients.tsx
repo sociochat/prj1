@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Building2, Award, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCountAnimation } from '../hooks/useCountAnimation';
-import { supabase, type Client } from '../lib/supabase';
+import { api, type Client } from '../lib/api';
 
 function StatCard({ value, label }: { value: number; label: string }) {
   const { count, elementRef } = useCountAnimation(value);
@@ -23,15 +23,11 @@ export default function Clients() {
   }, []);
 
   const fetchClients = async () => {
-    const { data, error } = await supabase
-      .from('clients')
-      .select('*')
-      .order('name');
-
-    if (error) {
-      console.error('Error fetching clients:', error);
-    } else {
+    try {
+      const data = await api.clients.getAll();
       setClients(data || []);
+    } catch (error) {
+      console.error('Error fetching clients:', error);
     }
     setLoading(false);
   };

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { supabase, type Client } from '../../lib/supabase';
+import { api, type Client } from '../../lib/api';
 import { Plus, Edit, Trash2, LogOut, Building2, ExternalLink } from 'lucide-react';
 
 export default function Dashboard() {
@@ -19,15 +19,11 @@ export default function Dashboard() {
 
   const fetchClients = async () => {
     setLoading(true);
-    const { data, error } = await supabase
-      .from('clients')
-      .select('*')
-      .order('name');
-
-    if (error) {
-      console.error('Error fetching clients:', error);
-    } else {
+    try {
+      const data = await api.clients.getAll();
       setClients(data || []);
+    } catch (error) {
+      console.error('Error fetching clients:', error);
     }
     setLoading(false);
   };
@@ -40,16 +36,12 @@ export default function Dashboard() {
   const handleDeleteClient = async (client: Client) => {
     if (!deletingClient) return;
 
-    const { error } = await supabase
-      .from('clients')
-      .delete()
-      .eq('id', client.id);
-
-    if (error) {
-      alert('Error deleting client: ' + error.message);
-    } else {
+    try {
+      await api.clients.delete(client.id);
       setClients(clients.filter(c => c.id !== client.id));
       setDeletingClient(null);
+    } catch (error: any) {
+      alert('Error deleting client: ' + error.message);
     }
   };
 
@@ -237,18 +229,9 @@ function ClientModal({ client, onClose, onSave }: { client?: Client; onClose: ()
 
     try {
       if (client) {
-        const { error } = await supabase
-          .from('clients')
-          .update(formData)
-          .eq('id', client.id);
-
-        if (error) throw error;
+        await api.clients.update(client.id, formData);
       } else {
-        const { error } = await supabase
-          .from('clients')
-          .insert([formData]);
-
-        if (error) throw error;
+        await api.clients.create(formData);
       }
 
       onSave();

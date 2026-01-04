@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { supabase, type Service } from '../../lib/supabase';
+import { api, type Service } from '../../lib/api';
 import { Plus, Edit, Trash2, ArrowLeft, Wrench } from 'lucide-react';
 
 export default function ServicesManagement() {
@@ -16,15 +16,11 @@ export default function ServicesManagement() {
 
   const fetchServices = async () => {
     setLoading(true);
-    const { data, error } = await supabase
-      .from('services')
-      .select('*')
-      .order('display_order');
-
-    if (error) {
-      console.error('Error fetching services:', error);
-    } else {
+    try {
+      const data = await api.services.getAll();
       setServices(data || []);
+    } catch (error) {
+      console.error('Error fetching services:', error);
     }
     setLoading(false);
   };
@@ -32,16 +28,12 @@ export default function ServicesManagement() {
   const handleDeleteService = async (service: Service) => {
     if (!deletingService) return;
 
-    const { error } = await supabase
-      .from('services')
-      .delete()
-      .eq('id', service.id);
-
-    if (error) {
-      alert('Error deleting service: ' + error.message);
-    } else {
+    try {
+      await api.services.delete(service.id);
       setServices(services.filter(s => s.id !== service.id));
       setDeletingService(null);
+    } catch (error: any) {
+      alert('Error deleting service: ' + error.message);
     }
   };
 
@@ -234,19 +226,12 @@ function ServiceModal({ service, onClose, onSave }: { service?: Service; onClose
     }
 
     try {
+      const serviceData = { ...formData, features: filteredFeatures };
+
       if (service) {
-        const { error } = await supabase
-          .from('services')
-          .update({ ...formData, features: filteredFeatures })
-          .eq('id', service.id);
-
-        if (error) throw error;
+        await api.services.update(service.id, serviceData);
       } else {
-        const { error } = await supabase
-          .from('services')
-          .insert([{ ...formData, features: filteredFeatures }]);
-
-        if (error) throw error;
+        await api.services.create(serviceData);
       }
 
       onSave();
