@@ -17,7 +17,7 @@ import ServicesManagement from './pages/admin/ServicesManagement';
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename="/prj1">
         <Routes>
           <Route path="/admin/login" element={<Login />} />
           <Route path="/admin/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
