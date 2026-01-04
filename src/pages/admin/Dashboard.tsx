@@ -116,10 +116,11 @@ export default function Dashboard() {
                   <div className="flex items-center space-x-2 ml-4">
                     <Link
                       to={`/admin/clients/${client.id}/projects`}
-                      className="p-2 text-cyan-600 hover:bg-cyan-50 rounded-lg transition-colors"
+                      className="flex items-center space-x-1 px-3 py-2 text-cyan-600 hover:bg-cyan-50 rounded-lg transition-colors border border-cyan-200"
                       title="Manage Projects"
                     >
-                      <ExternalLink className="h-5 w-5" />
+                      <ExternalLink className="h-4 w-4" />
+                      <span className="text-sm font-medium">Projects</span>
                     </Link>
                     <button
                       onClick={() => setEditingClient(client)}
