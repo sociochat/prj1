@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import ImageWithLoader from './ImageWithLoader';
 
 export default function Footer() {
   return (
@@ -7,11 +8,13 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <Link to="/" className="flex items-center space-x-3 mb-4 hover:opacity-80 transition-opacity">
-              <img
-                src="/image.png"
-                alt="Mamta Waterproofing Logo"
-                className="h-12 w-12 object-contain"
-              />
+              <div className="h-12 w-12">
+                <ImageWithLoader
+                  src="/image.png"
+                  alt="Mamta Waterproofing Logo"
+                  className="h-full w-full object-contain"
+                />
+              </div>
               <h3 className="text-lg font-bold text-white">Mamta Waterproofing</h3>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">Your trusted partner for all waterproofing solutions since 1991.</p>

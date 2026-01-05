@@ -1,6 +1,7 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import ImageWithLoader from './ImageWithLoader';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,11 +14,13 @@ export default function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity">
-            <img
-              src="/image.png"
-              alt="Mamta Waterproofing Logo"
-              className="h-14 w-14 sm:h-20 sm:w-20 object-contain"
-            />
+            <div className="h-14 w-14 sm:h-20 sm:w-20">
+              <ImageWithLoader
+                src="/image.png"
+                alt="Mamta Waterproofing Logo"
+                className="h-full w-full object-contain"
+              />
+            </div>
             <div>
               <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">Mamta Waterproofing</h1>
               <p className="text-xs text-gray-600 hidden sm:block">Since 1991 | Specializing in Terrace, Bathroom, Basement & Sunken Areas Waterproofing Across Mumbai</p>

@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { Building2, Calendar, CheckCircle, ArrowLeft, MapPin } from 'lucide-react';
+import ImageWithLoader from '../components/ImageWithLoader';
 
 export default function ClientDetail() {
   const { slug } = useParams();
@@ -244,7 +245,7 @@ export default function ClientDetail() {
               </div>
             </div>
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <img
+              <ImageWithLoader
                 src={client.image}
                 alt={client.name}
                 className="w-full h-full object-cover"

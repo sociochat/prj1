@@ -1,6 +1,7 @@
 import { Award, Users, Target, CheckCircle, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CountUp from '../components/CountUp';
+import ImageWithLoader from '../components/ImageWithLoader';
 
 export default function About() {
   const team = [
@@ -37,7 +38,7 @@ export default function About() {
               </p>
             </div>
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <img
+              <ImageWithLoader
                 src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg"
                 alt="Building waterproofing"
                 className="w-full h-full object-cover"
@@ -77,7 +78,7 @@ export default function About() {
                 </div>
               </div>
               <div className="relative h-72 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl">
-                <img
+                <ImageWithLoader
                   src="https://images.pexels.com/photos/2440471/pexels-photo-2440471.jpeg"
                   alt="Founder at work"
                   className="w-full h-full object-cover"
@@ -236,7 +237,7 @@ export default function About() {
                 </div>
               </div>
               <div className="relative h-64 lg:h-auto">
-                <img
+                <ImageWithLoader
                   src="https://images.pexels.com/photos/5974056/pexels-photo-5974056.jpeg"
                   alt="Construction equipment"
                   className="w-full h-full object-cover"

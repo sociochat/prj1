@@ -1,5 +1,6 @@
 import { Building2, Award, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ImageWithLoader from '../components/ImageWithLoader';
 
 export default function Clients() {
   const clients = [
@@ -136,14 +137,14 @@ export default function Clients() {
                 className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2"
               >
                 <div className="relative h-40 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center border-b-2 border-cyan-100">
-                  <img
+                  <ImageWithLoader
                     src={client.logo}
                     alt={`${client.name} logo`}
                     className="w-28 h-28 object-contain opacity-80 group-hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="relative h-28 overflow-hidden">
-                  <img
+                  <ImageWithLoader
                     src={client.image}
                     alt={client.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"

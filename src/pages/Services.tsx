@@ -1,5 +1,6 @@
 import { Droplets, Shield, Wrench, CheckCircle, Zap, Layers } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ImageWithLoader from '../components/ImageWithLoader';
 
 export default function Services() {
   const services = [
@@ -173,7 +174,7 @@ export default function Services() {
                 </div>
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl group">
-                    <img
+                    <ImageWithLoader
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
