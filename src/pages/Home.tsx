@@ -1,5 +1,6 @@
 import { Shield, CheckCircle, Award, Droplets, Target, Wrench, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import CountUp from '../components/CountUp';
 
 export default function Home() {
   const services = [
@@ -58,15 +59,21 @@ export default function Home() {
               </div>
               <div className="grid grid-cols-3 gap-4 pt-4">
                 <div className="text-center">
-                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cyan-600">30+</p>
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cyan-600">
+                    <CountUp end={30} suffix="+" />
+                  </p>
                   <p className="text-sm text-gray-600 mt-1">Years Experience</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cyan-600">50+</p>
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cyan-600">
+                    <CountUp end={50} suffix="+" />
+                  </p>
                   <p className="text-sm text-gray-600 mt-1">Projects</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cyan-600">100%</p>
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cyan-600">
+                    <CountUp end={100} suffix="%" />
+                  </p>
                   <p className="text-sm text-gray-600 mt-1">Satisfaction</p>
                 </div>
               </div>
@@ -206,19 +213,27 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900 text-sm sm:text-base">Lift Machines</p>
-                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">8</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">
+                      <CountUp end={8} duration={1500} />
+                    </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900 text-sm sm:text-base">Cutter Machines</p>
-                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">10</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">
+                      <CountUp end={10} duration={1500} />
+                    </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900 text-sm sm:text-base">Breaker Machines</p>
-                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">12</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">
+                      <CountUp end={12} duration={1500} />
+                    </p>
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow">
                     <p className="font-semibold text-gray-900 text-sm sm:text-base">Grouting Pumps</p>
-                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">7</p>
+                    <p className="text-cyan-600 text-xl sm:text-2xl font-bold mt-1">
+                      <CountUp end={7} duration={1500} />
+                    </p>
                   </div>
                 </div>
               </div>
@@ -245,7 +260,9 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-12 sm:mt-16 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl p-6 sm:p-8 lg:p-12 text-white text-center">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Over 90,75,000 sq.ft Completed</h3>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+              Over <CountUp end={9075000} separator="," duration={2500} /> sq.ft Completed
+            </h3>
             <p className="text-base sm:text-lg lg:text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">Successfully delivered waterproofing projects across residential and commercial properties in Mumbai and surrounding areas</p>
           </div>
         </div>

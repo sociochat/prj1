@@ -1,5 +1,6 @@
 import { Award, Users, Target, CheckCircle, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import CountUp from '../components/CountUp';
 
 export default function About() {
   const team = [
@@ -43,7 +44,9 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
                 <div className="text-white">
-                  <p className="text-5xl font-bold mb-2">30+</p>
+                  <p className="text-5xl font-bold mb-2">
+                    <CountUp end={30} suffix="+" />
+                  </p>
                   <p className="text-xl">Years of Excellence</p>
                 </div>
               </div>
@@ -188,7 +191,9 @@ export default function About() {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
                     <div className="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center">
-                      <p className="text-2xl font-bold text-cyan-600">8</p>
+                      <p className="text-2xl font-bold text-cyan-600">
+                        <CountUp end={8} duration={1500} />
+                      </p>
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Lift Machines</p>
@@ -197,7 +202,9 @@ export default function About() {
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <p className="text-2xl font-bold text-blue-600">12</p>
+                      <p className="text-2xl font-bold text-blue-600">
+                        <CountUp end={12} duration={1500} />
+                      </p>
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Breaker Machines</p>
@@ -206,7 +213,9 @@ export default function About() {
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center">
-                      <p className="text-2xl font-bold text-teal-600">7</p>
+                      <p className="text-2xl font-bold text-teal-600">
+                        <CountUp end={7} duration={1500} />
+                      </p>
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Grouting Pumps</p>
@@ -215,7 +224,9 @@ export default function About() {
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center">
-                      <p className="text-2xl font-bold text-orange-600">10</p>
+                      <p className="text-2xl font-bold text-orange-600">
+                        <CountUp end={10} duration={1500} />
+                      </p>
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Cutter Machines</p>
