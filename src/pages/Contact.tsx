@@ -50,8 +50,14 @@ export default function Contact() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Email Us</h3>
               <p className="text-gray-600 mb-4">Send us your queries</p>
-              <a href="mailto:mamtawaterproofing@yahoo.com" className="block text-blue-600 hover:text-blue-700 font-semibold text-lg break-all transition-colors">
+              <a href="mailto:mamtawaterproofing@yahoo.com" className="block text-blue-600 hover:text-blue-700 font-semibold text-lg break-all transition-colors mb-2">
                 mamtawaterproofing@yahoo.com
+              </a>
+              <a href="mailto:navin.j@mamtawaterpoofing.com" className="block text-blue-600 hover:text-blue-700 font-semibold text-lg break-all transition-colors mb-2">
+                navin.j@mamtawaterpoofing.com
+              </a>
+              <a href="mailto:ramchandra.j@mamtawaterproofing.com" className="block text-blue-600 hover:text-blue-700 font-semibold text-lg break-all transition-colors">
+                ramchandra.j@mamtawaterproofing.com
               </a>
             </div>
 

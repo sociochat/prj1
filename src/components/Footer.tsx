@@ -42,6 +42,8 @@ export default function Footer() {
               <p className="text-gray-400">Bandra (E), Mumbai</p>
               <a href="tel:9322290414" className="block text-gray-400 hover:text-cyan-400 transition-colors">9322290414</a>
               <a href="mailto:mamtawaterproofing@yahoo.com" className="block text-gray-400 hover:text-cyan-400 transition-colors break-all">mamtawaterproofing@yahoo.com</a>
+              <a href="mailto:navin.j@mamtawaterpoofing.com" className="block text-gray-400 hover:text-cyan-400 transition-colors break-all">navin.j@mamtawaterpoofing.com</a>
+              <a href="mailto:ramchandra.j@mamtawaterproofing.com" className="block text-gray-400 hover:text-cyan-400 transition-colors break-all">ramchandra.j@mamtawaterproofing.com</a>
             </div>
           </div>
         </div>
