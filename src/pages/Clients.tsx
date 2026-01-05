@@ -141,6 +141,7 @@ export default function Clients() {
                     src={client.logo}
                     alt={`${client.name} logo`}
                     className="w-28 h-28 object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                    wrapperClassName="relative inline-block"
                   />
                 </div>
                 <div className="relative h-28 overflow-hidden">

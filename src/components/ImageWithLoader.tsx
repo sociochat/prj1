@@ -4,15 +4,16 @@ interface ImageWithLoaderProps {
   src: string;
   alt: string;
   className?: string;
+  wrapperClassName?: string;
 }
 
-const ImageWithLoader = ({ src, alt, className = '' }: ImageWithLoaderProps) => {
+const ImageWithLoader = ({ src, alt, className = '', wrapperClassName = 'relative w-full h-full' }: ImageWithLoaderProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className="relative w-full h-full">
+    <div className={wrapperClassName}>
       {!isLoaded && (
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-shimmer bg-[length:200%_100%]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-shimmer bg-[length:200%_100%] rounded"></div>
       )}
       <img
         src={src}
