@@ -114,7 +114,7 @@ export default function Contact() {
               <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
                 <div className="h-96">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.029374100467!2d72.85504!3d19.059684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c90000000001%3A0x123456789!2sGautam%20Samta%20Seva%20Sangh%20Community%20Hall%2C%20Bandra%20East!5e0!3m2!1sen!2sin!4v1700000000"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d944.6304574929785!2d72.9903215!3d19.1653956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9dcf220a49b%3A0xfebeba17366cf358!2sMamta%20Waterproofing!5e0!3m2!1sen!2sin!4v1704729600000"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
