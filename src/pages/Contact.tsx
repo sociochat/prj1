@@ -98,9 +98,8 @@ export default function Contact() {
                       <strong>Mamta Waterproofing</strong><br />
                       Ankur Apartment, Plot No. 41,<br />
                       Near Vighnaharta Ganesh Mandir,<br />
-                      Sector 20B, Airoli,<br />
-                      Navi Mumbai, Thane - 400708<br />
-                      Maharashtra, India
+                      Sector 20B, Airoli, Navi Mumbai,<br />
+                      Thane, Maharashtra, India - 400708
                     </p>
                   </div>
                 </div>
