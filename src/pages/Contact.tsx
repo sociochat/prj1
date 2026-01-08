@@ -40,7 +40,7 @@ export default function Contact() {
                 +91 93222 90414
               </a>
               <a href="tel:8850990739" className="block text-cyan-600 hover:text-cyan-700 font-semibold text-lg transition-colors">
-                +91 88509 90739
+                +91 84338 42187
               </a>
             </div>
 
@@ -96,18 +96,18 @@ export default function Contact() {
                     <h3 className="text-2xl font-bold mb-4">Visit Our Office</h3>
                     <p className="text-gray-300 leading-relaxed text-lg">
                       <strong>Mamta Waterproofing</strong><br />
-                      Room No. 7, 1st Lane,<br />
-                      Gautam Samta Seva Sangh Community Hall,<br />
-                      Near Budha Vihar,<br />
-                      Bandra (East), Mumbai - 400051<br />
+                      Ankur Apartment, Plot No. 41,<br />
+                      Near Vighnaharta Ganesh Mandir,<br />
+                      Sector 20B, Airoli,<br />
+                      Navi Mumbai, Thane - 400708<br />
                       Maharashtra, India
                     </p>
                   </div>
                 </div>
                 <div className="mt-8 pt-8 border-t border-gray-700">
                   <p className="text-sm text-gray-400 mb-4">Business Details:</p>
-                  <p className="text-gray-300"><strong>GST:</strong> 27ADSPJ9975R1ZE</p>
-                  <p className="text-gray-300"><strong>PAN:</strong> ADSPJ9975R</p>
+                  <p className="text-gray-300"><strong>GST:</strong> 27ADFPJ9975R1ZE</p>
+                  <p className="text-gray-300"><strong>PAN:</strong> ADFPJ9975R</p>
                   <p className="text-gray-300 mt-2"><strong>Proprietor:</strong> Mr. Ramchandra Jukanti</p>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default function Contact() {
                 <div className="p-6 bg-gradient-to-r from-cyan-50 to-blue-50">
                   <p className="text-center text-gray-700">
                     <MapPin className="inline h-5 w-5 text-cyan-600 mr-2" />
-                    <strong>Bandra East, Mumbai - 400051</strong>
+                    <strong>Airoli, Navi Mumbai - 400708</strong>
                   </p>
                 </div>
               </div>
