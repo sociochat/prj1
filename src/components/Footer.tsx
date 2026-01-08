@@ -52,6 +52,9 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-800 pt-8 text-center text-sm">
           <p className="text-gray-400">&copy; {new Date().getFullYear()} Mamta Waterproofing. All rights reserved. | GST: 27ADFPJ9975R1ZE</p>
+          <p className="text-gray-500 mt-2">
+            Powered by <a href="https://sociochat.in/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">Sociochat Softwares</a>
+          </p>
         </div>
       </div>
     </footer>

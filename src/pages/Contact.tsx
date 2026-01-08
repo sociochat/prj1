@@ -39,7 +39,7 @@ export default function Contact() {
               <a href="tel:9322290414" className="block text-cyan-600 hover:text-cyan-700 font-semibold text-lg mb-2 transition-colors">
                 +91 93222 90414
               </a>
-              <a href="tel:8850990739" className="block text-cyan-600 hover:text-cyan-700 font-semibold text-lg transition-colors">
+              <a href="tel:8433842187" className="block text-cyan-600 hover:text-cyan-700 font-semibold text-lg transition-colors">
                 +91 84338 42187
               </a>
             </div>
