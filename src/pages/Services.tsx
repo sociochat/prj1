@@ -122,17 +122,17 @@ export default function Services() {
       image: 'https://5.imimg.com/data5/SELLER/Default/2025/4/506594942/GY/ZL/LQ/244844032/image-2025-04-28t170839-038-500x500.png'
     },
     {
-      title: 'Bitumen Work',
+      title: 'Building Repairing',
       icon: Wrench,
-      description: 'Traditional bitumen-based waterproofing solutions for cost-effective protection and sealing.',
+      description: 'Comprehensive building repair and maintenance services to restore structural integrity and enhance durability.',
       features: [
-        'Bitumen coating application',
-        'Asphalt waterproofing',
-        'Crack sealing with bitumen',
-        'Surface preparation and priming',
-        'Budget-friendly solutions'
+        'Structural crack repair',
+        'Plaster and rendering work',
+        'Wall and ceiling restoration',
+        'Foundation strengthening',
+        'Concrete repair and restoration'
       ],
-      image: 'https://123oil.co.uk/wp-content/uploads/2025/10/bitumen-work.jpg'
+      image: 'https://dwelex.in/wp-content/uploads/2025/04/construction-Maintenance-repair-image.jpeg'
     }
   ];
 
